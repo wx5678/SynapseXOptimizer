@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SynapseX · 授权管理</title>
+    <link rel="stylesheet" href="/admin/assets/style.css" />
+    <script src="/admin/assets/app.js" defer></script>
+    <script src="/admin/assets/product.js" defer></script>
+  </head>
+  <body>
+    <div class="shell">
+      <aside>
+        <a class="brand" href="/admin/"
+          ><span class="mark">S</span
+          ><span>SynapseX<small>管理控制台</small></span></a
+        >
+        <nav aria-label="后台导航">
+          <button data-view="users" class="selected">
+            用户管理<span>01</span>
+          </button>
+          <button data-view="licenses">授权码与设备<span>02</span></button>
+          <button data-view="audit">操作记录<span>03</span></button>
+          <button data-view="settings">管理设置<span>04</span></button>
+        </nav>
+        <div class="sidebar-note">内部测试阶段<br />价格与支付尚未启用</div>
+      </aside>
+      <main>
+        <header>
+          <span>工作空间 / <b id="breadcrumb">用户管理</b></span>
+          <div>
+            <span id="identity">未登录</span
+            ><button id="logout" hidden>退出登录</button>
+          </div>
+        </header>
+        <p id="message" role="status" aria-live="polite" hidden></p>
+        <section id="login-view" class="login-panel">
+          <span class="eyebrow">ADMINISTRATOR</span>
+          <h1>登录管理后台</h1>
+          <p class="muted">使用服务器上创建的管理员账号。</p>
+          <form id="login-form">
+            <label
+              >管理员账号<input
+                name="username"
+                autocomplete="username"
+                required
+                maxlength="48" /></label
+            ><label
+              >密码<input
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                maxlength="128" /></label
+            ><button class="primary" type="submit">登录</button>
+          </form>
+          <p class="footnote">
+            没有默认密码。首次使用需要在服务器创建管理员；忘记密码可通过服务器管理工具重设。
+          </p>
+        </section>
+        <div id="workspace" hidden>
+          <section id="users-view">
+            <div class="page-heading">
+              <div>
+                <span class="eyebrow">USERS</span>
+                <h1>用户管理</h1>
+                <p class="muted">
+                  用户在客户端注册后会显示在这里。选择账号，开通授权或管理设备。
+                </p>
+              </div>
+              <button id="users-refresh">刷新用户</button>
+            </div>
+            <div class="panel">
+              <div class="toolbar">
+                <form id="users-search-form">
+                  <input
+                    id="users-search"
+                    aria-label="搜索软件账号、备注或用户编号"
+                    placeholder="搜索软件账号、备注或用户编号"
+                    maxlength="200"
+                  /><button>搜索</button>
+                </form>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>用户 / 备注</th>
+                      <th>账号状态</th>
+                      <th>授权与设备</th>
+                      <th>注册 / 最近登录</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody id="user-rows"></tbody>
+                </table>
+              </div>
+              <p id="users-empty" class="empty" hidden>
+                暂无用户。请在新版客户端的“软件设置 →
+                软件账号”中注册，再刷新此列表。
+              </p>
+              <footer class="pagination">
+                <span id="users-page-info"></span>
+                <div>
+                  <button id="users-previous">上一页</button
+                  ><button id="users-next">下一页</button>
+                </div>
+              </footer>
+            </div>
+            <p class="footnote">
+              账号与九阴游戏账号无关。停用账号会注销其在线会话；撤销、停用或解绑不能收回离线中的已签名凭证，最长
+              7 天。恢复账号不会自动恢复已撤销的授权。
+            </p>
+          </section>
+          <section id="licenses-view" hidden>
+            <div class="page-heading">
+              <div>
+                <span class="eyebrow">LICENSES</span>
+                <h1>授权管理</h1>
+                <p class="muted">签发、管理设备与查看授权状态。</p>
+              </div>
+              <button id="new-license" class="primary">＋ 签发授权码</button>
+            </div>
+            <div class="stats">
+              <article>
+                <span>全部授权</span><strong id="stat-total">—</strong>
+              </article>
+              <article>
+                <span>有效授权</span><strong id="stat-active">—</strong>
+              </article>
+              <article>
+                <span>已到期</span><strong id="stat-expired">—</strong>
+              </article>
+              <article>
+                <span>已撤销</span><strong id="stat-revoked">—</strong>
+              </article>
+            </div>
+            <div class="panel">
+              <div class="toolbar">
+                <form id="search-form">
+                  <input
+                    id="search"
+                    aria-label="搜索备注或授权编号"
+                    placeholder="搜索备注或授权编号"
+                    maxlength="200"
+                  /><button type="submit">搜索</button>
+                </form>
+                <button id="refresh">刷新</button>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>授权 / 备注</th>
+                      <th>状态</th>
+                      <th>设备</th>
+                      <th>到期时间</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody id="license-rows"></tbody>
+                </table>
+              </div>
+              <p id="empty" class="empty" hidden>
+                没有匹配的授权。可以签发一枚测试授权码，验证客户端激活流程。
+              </p>
+              <footer class="pagination">
+                <span id="page-info"></span>
+                <div>
+                  <button id="previous">上一页</button
+                  ><button id="next">下一页</button>
+                </div>
+              </footer>
+            </div>
+            <p class="footnote">
+              撤销和解绑会阻止后续续期；已签发的离线凭证到期前仍可用，最长 7
+              天。授权码只展示一次，列表不保存明文。
+            </p>
+          </section>
+          <section id="audit-view" hidden>
+            <div class="page-heading">
+              <div>
+                <span class="eyebrow">ACTIVITY</span>
+                <h1>操作记录</h1>
+                <p class="muted">签发、激活、管理员登录与变更记录。</p>
+              </div>
+              <button id="audit-refresh">刷新记录</button>
+            </div>
+            <div class="panel table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>时间</th>
+                    <th>操作</th>
+                    <th>对象与详情</th>
+                  </tr>
+                </thead>
+                <tbody id="audit-rows"></tbody>
+              </table>
+            </div>
+            <button id="audit-more">加载更早记录</button>
+          </section>
+          <section id="settings-view" hidden>
+            <div class="page-heading">
+              <div>
+                <span class="eyebrow">SETTINGS</span>
+                <h1>管理设置</h1>
+                <p class="muted">账号安全与上线准备。</p>
+              </div>
+            </div>
+            <div class="settings-grid">
+              <section class="panel padded">
+                <h2>修改管理员密码</h2>
+                <form id="password-form">
+                  <label
+                    >当前密码<input
+                      name="old_password"
+                      type="password"
+                      autocomplete="current-password"
+                      required
+                      maxlength="128" /></label
+                  ><label
+                    >新密码<input
+                      name="new_password"
+                      type="password"
+                      autocomplete="new-password"
+                      minlength="14"
+                      maxlength="128"
+                      required
+                  /></label>
+                  <p class="footnote">
+                    至少 14 个字符。修改后所有当前管理员会话失效，需要重新登录。
+                  </p>
+                  <button class="primary">修改密码</button>
+                </form>
+              </section>
+              <section class="panel padded">
+                <h2>上线准备</h2>
+                <ul class="checklist">
+                  <li>会员与版本发布配置见下方</li>
+                  <li>支付渠道、订单与退款规则</li>
+                  <li>加密异机备份与外部告警</li>
+                </ul>
+                <p class="footnote">
+                  暂未接入在线支付，价格仅展示，联系微信人工开通。软件用户、账号授权和旧授权码均可管理，不涉及九阴游戏账号。公网
+                  HTTPS 已配置。
+                </p>
+              </section>
+            </div>
+            <section class="panel padded">
+              <h2>会员与客户端更新</h2><p class="muted">价格、联系微信及版本信息保存到服务器。客户端联网检查后生效。</p>
+              <button id="product-load" type="button">读取 / 刷新配置</button>
+              <form id="product-form" hidden>
+                <div class="form-grid"><label>月费（元）<input name="month" type="number" min="0.01" max="100000" step="0.01" required></label><label>年费（元）<input name="year" type="number" min="0.01" max="100000" step="0.01" required></label></div>
+                <label>联系微信<input name="wechat" maxlength="80" required></label>
+                <label>服务说明<input name="service_text" maxlength="240" placeholder="一对一系统优化 · 硬件超频调校，联系微信咨询。"></label>
+                <label>替换联系二维码（PNG，最多 200 KB）<input id="product-qr" type="file" accept="image/png"></label><img id="product-qr-preview" width="150" alt="当前联系微信二维码">
+                <hr><h3>客户端更新</h3><label><input name="enabled" type="checkbox">对外发布此版本</label>
+                <div class="form-grid"><label>版本号<input name="version" pattern="[0-9]{1,5}\.[0-9]{1,5}\.[0-9]{1,5}" required placeholder="0.39.0"></label><label>更新方式<select name="mode"><option value="optional">可选更新</option><option value="mandatory">强制更新</option></select></label></div>
+                <label>码云安装包直链（HTTPS）<input name="url" maxlength="2048" placeholder="https://gitee.com/…"></label>
+                <label>安装包 SHA-256<input name="sha256" maxlength="64"></label><label>安装包大小（字节）<input name="size" type="number" min="0" max="2147483648" step="1"></label>
+                <label>更新说明<textarea name="notes" maxlength="4000" rows="4"></textarea></label>
+                <p class="footnote">强制更新会阻止旧版本进入功能。请先用“可选更新”完成真实下载验证，再切换为强制更新。直链必须能匿名下载，不能填仓库网页。未准备好安装包请保持关闭；可随时关闭发布解除版本限制。旧版未集成此更新机制，需要先手动升级。</p>
+                <button class="primary">保存配置</button><p id="product-status" role="status"></p>
+              </form>
+            </section>
+          </section>
+        </div>
+      </main>
+    </div>
+    <dialog id="user-editor">
+      <form id="user-editor-form">
+        <div class="dialog-head">
+          <h2 id="user-editor-title">管理用户</h2>
+          <button
+            type="button"
+            id="close-user-editor"
+            aria-label="关闭用户编辑"
+          >
+            ×
+          </button>
+        </div>
+        <p id="user-editor-target" class="muted"></p>
+        <div id="user-grant-fields">
+          <div class="form-grid">
+            <label
+              >授权天数<input
+                name="days"
+                type="number"
+                min="1"
+                max="3650"
+                value="30" /></label
+            ><label
+              >账号绑定设备数<input
+                name="device_limit"
+                type="number"
+                min="1"
+                max="1"
+                readonly
+                value="1"
+            /></label>
+          </div>
+          <label
+            >功能标识<input name="features" value="vip" maxlength="1000"
+          /></label>
+          <p class="footnote">
+            填写 vip 解锁全部 VIP 应用功能和 3 个签到账号。也可分别填写 quick.optimal、quick.maximum、system.expert、network.tcp、network.nic、lab.all、signin.three（逗号分隔）。lab.all 仅控制实验室进阶应用；基础检测、读取和恢复免费。jiuyin.fps 不可通过此处授予：九阴超原版帧率与视野上限必须通过软件管理员角色校验。已有授权请使用“延期”。
+          </p>
+        </div>
+        <label id="user-remark-field"
+          >用户备注<input name="remark" maxlength="200"
+        /></label>
+        <label
+          >操作原因<input
+            name="reason"
+            required
+            maxlength="200"
+            placeholder="记录到操作日志"
+        /></label>
+        <p id="user-editor-error" role="alert" hidden></p>
+        <button class="primary" type="submit">确认操作</button>
+      </form>
+    </dialog>
+    <dialog id="editor">
+      <form id="editor-form">
+        <div class="dialog-head">
+          <h2 id="editor-title">签发授权码</h2>
+          <button type="button" id="close-editor" aria-label="关闭">×</button>
+        </div>
+        <div id="issue-fields">
+          <label
+            >备注 / 客户标识<input
+              name="reference"
+              maxlength="200"
+              placeholder="例如：内部测试 · 张先生"
+          /></label>
+          <div class="form-grid">
+            <label
+              >有效天数<input
+                name="days"
+                type="number"
+                min="1"
+                max="3650"
+                value="30" /></label
+            ><label
+              >允许设备数<input
+                name="device_limit"
+                type="number"
+                min="1"
+                max="10"
+                value="1"
+            /></label>
+          </div>
+          <label
+            >功能标识<input name="features" value="vip" maxlength="1000"
+          /></label>
+          <p class="footnote">
+            vip 解锁全部 VIP 功能和 3 个签到账号；test.pilot 仅用于测试，不解锁 VIP。多个功能标识用逗号分隔。
+          </p>
+        </div>
+        <div id="action-fields" hidden>
+          <label id="extension-label"
+            >延长天数<input
+              name="extension_days"
+              type="number"
+              min="1"
+              max="3650"
+              value="30" /></label
+          ><label
+            >操作原因<input
+              name="reason"
+              maxlength="200"
+              placeholder="请填写原因，记录到操作日志"
+          /></label>
+          <p class="footnote">
+            已签发的离线凭证到期前仍可用，最长 7
+            天。撤销后不能通过延期重新启用。
+          </p>
+        </div>
+        <p id="editor-error" role="alert" hidden></p>
+        <button id="editor-submit" class="primary" type="submit">
+          确认签发
+        </button>
+      </form>
+    </dialog>
+    <dialog id="code-dialog">
+      <div class="dialog-head">
+        <h2>授权码已签发</h2>
+        <button id="close-code" aria-label="关闭">×</button>
+      </div>
+      <p class="muted">请立即复制并妥善保存。关闭后无法再次查看此授权码。</p>
+      <textarea
+        id="issued-code"
+        readonly
+        aria-label="新签发的授权码"
+        rows="3"
+      ></textarea
+      ><button id="copy-code" class="primary">复制授权码</button>
+      <p id="copy-state" role="status"></p>
+    </dialog>
+    <dialog id="devices-dialog">
+      <div class="dialog-head">
+        <h2>绑定设备</h2>
+        <button id="close-devices" aria-label="关闭">×</button>
+      </div>
+      <div id="devices-list"></div>
+    </dialog>
+  </body>
+</html>

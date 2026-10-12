@@ -1,0 +1,33 @@
+.close-window-dialog { width:min(528px,calc(100vw - 40px)); max-height:calc(100dvh - 48px); margin:auto; padding:28px; overflow:auto; border:1px solid var(--prism-line); border-radius:20px; background:var(--skin-surface); color:var(--prism-text); box-shadow:0 24px 80px #0005; }
+.close-window-dialog::backdrop { background:rgba(8,14,24,.6); }
+.close-window-dialog .close-window-dismiss { position:absolute; right:20px; top:20px; display:grid; place-items:center; width:34px; height:34px; border:1px solid var(--prism-line); border-radius:10px; background:var(--skin-input); color:var(--skin-muted); }
+.close-window-mark { display:grid; place-items:center; width:46px; height:46px; border-radius:14px; border:1px solid var(--prism-line); color:var(--prism-accent-strong); background:var(--skin-input); }
+.close-window-eyebrow { margin:20px 0 8px; font-size:12px; font-weight:600; color:var(--prism-accent-strong); }
+.close-window-dialog h2 { margin:0; font-size:25px; line-height:1.35; font-weight:650; letter-spacing:-.025em; color:var(--prism-text); }
+.close-window-description { margin:10px 0 22px; font-size:14px; line-height:1.65; color:var(--skin-muted); }
+.close-window-options { display:grid; gap:10px; min-width:0; border:0; padding:0; margin:0; }
+.close-window-option { position:relative; display:flex; align-items:center; gap:13px; padding:17px 15px; border:1px solid var(--prism-line); border-radius:13px; background:var(--skin-input); cursor:pointer; }
+.close-window-option.is-selected { border-color:var(--prism-accent-strong); background:color-mix(in srgb,var(--prism-accent-strong) 9%,var(--skin-surface)); }
+.close-window-option input[type=radio] { position:absolute; width:1px; height:1px; opacity:0; }
+.close-window-option:focus-within { outline:2px solid var(--prism-accent-strong); outline-offset:3px; }
+.close-window-option-icon { display:grid; place-items:center; flex-shrink:0; color:var(--skin-muted); }
+.close-window-option.is-selected .close-window-option-icon { color:var(--prism-accent-strong); }
+.close-window-option-copy { flex:1; min-width:0; }
+.close-window-option-copy strong { display:flex; flex-wrap:wrap; align-items:center; gap:8px; color:var(--prism-text); font-size:14px; line-height:1.6; font-weight:600; }
+.close-window-option-copy strong small { font-size:10px; font-weight:500; padding:1px 6px; border-radius:5px; color:var(--prism-accent-strong); background:color-mix(in srgb,var(--prism-accent-strong) 12%,transparent); }
+.close-window-option-copy > span { display:block; margin-top:4px; color:var(--skin-muted); font-size:12px; line-height:1.7; }
+.close-window-radio { display:grid; place-items:center; width:18px; height:18px; flex-shrink:0; border-radius:50%; border:1px solid var(--skin-muted); }
+.close-window-option.is-selected .close-window-radio { border-color:var(--prism-accent-strong); color:var(--skin-surface); background:var(--prism-accent-strong); }
+.close-window-preference { margin-top:22px; }
+.close-window-preference label { display:inline-flex; align-items:center; gap:9px; font-size:13px; cursor:pointer; }
+.close-window-preference input { width:15px; height:15px; margin:0; accent-color:var(--prism-accent-strong); }
+.close-window-preference p { margin:7px 0 0 24px; font-size:12px; line-height:1.6; color:var(--skin-muted); }
+.close-window-dialog footer { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:24px; padding-top:20px; border-top:1px solid var(--prism-line); }
+.close-window-dialog footer button { min-height:44px; border-radius:10px; font-size:13px; font-weight:600; }
+.close-window-dialog button:focus-visible { outline:2px solid var(--prism-accent-strong); outline-offset:3px; }
+.close-window-dialog button:active:not(:disabled) { transform:scale(.98); }
+.close-window-dialog button:disabled,.close-window-options:disabled { opacity:.6; cursor:wait; }
+.close-window-footnote { margin:14px 0 0; font-size:12px; line-height:1.7; color:var(--skin-muted); text-align:center; }
+.close-window-error { font-size:13px; margin:12px 0 0; color:var(--status-danger,#e06c75); }
+@media (hover:hover) and (pointer:fine) { .close-window-option:hover,.close-window-dismiss:hover { border-color:var(--prism-accent-strong); } }
+@media (max-width:560px) { .close-window-dialog { padding:22px; } .close-window-dialog h2 { font-size:22px; } }

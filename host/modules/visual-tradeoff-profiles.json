@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 2,
+  "description": "九阴真经可恢复的显示配置目录。所有列出的键均可读取和逐项自定义，游戏程序文件不作修改。",
+  "protectedSettings": [],
+  "editableSettings": [
+    { "id": "visual_radius", "file": "system_set.ini", "section": "main", "key": "visual_radius", "name": "视野范围（原版范围）", "description": "此处仅调整原版范围内的配置值。更高上限请使用“九阴帧率与视野”，仅限管理员；视距增大会增加显卡负载，可能降低帧数。", "inputType": "integer", "minimum": 50, "maximum": 250, "step": 2, "advanced": true, "values": [] },
+    { "id": "super_visual_range_enable", "file": "system_set.ini", "section": "main", "key": "super_visual_range_enable", "name": "扩展视野", "description": "控制扩展视野的开启与关闭。", "inputType": "select", "advanced": true, "values": [{ "value": "false", "label": "关闭" }, { "value": "true", "label": "开启" }] },
+    { "id": "virtual_object_count", "file": "systeminfo.ini", "section": "Config", "key": "virtual_object_count", "name": "同屏对象数量", "description": "写入游戏配置中的同屏对象数量。", "inputType": "integer", "minimum": 0, "maximum": 1000, "step": 1, "advanced": true, "values": [] },
+    { "id": "max_camera_dis", "file": "systeminfo.ini", "section": "Config", "key": "max_camera_dis", "name": "最大镜头距离", "description": "写入游戏配置中的最大镜头距离数值。", "inputType": "integer", "minimum": 0, "maximum": 10000, "step": 1, "advanced": true, "values": [] },
+    { "id": "shadow_quality", "file": "system_set.ini", "section": "main", "key": "shadow_quality", "name": "角色与场景阴影", "description": "控制角色和场景阴影的开启与关闭。", "values": [{ "value": "0", "label": "关闭" }, { "value": "1", "label": "开启" }] },
+    { "id": "weather_enable", "file": "system_set.ini", "section": "main", "key": "weather_enable", "name": "天气效果", "description": "控制游戏场景中的天气效果。关闭后不显示雨、雪等天气表现。", "values": [{ "value": "false", "label": "关闭" }, { "value": "true", "label": "开启" }] },
+    { "id": "shownpc_corpsename", "file": "systeminfo.ini", "section": "Config", "key": "shownpc_corpsename", "name": "NPC 势力／组织标签", "description": "控制 NPC 头顶的势力、门派或组织文字；不控制 NPC 模型和名字。", "values": [{ "value": "0", "label": "隐藏" }, { "value": "1", "label": "显示" }] },
+    { "id": "showself_guild", "file": "systeminfo.ini", "section": "Config", "key": "showself_guild", "name": "自己的帮会标签", "description": "控制自己角色头顶的帮会名称；不控制角色名字和模型。", "values": [{ "value": "0", "label": "隐藏" }, { "value": "1", "label": "显示" }] },
+    { "id": "showfriends_guild", "file": "systeminfo.ini", "section": "Config", "key": "showfriends_guild", "name": "友方玩家帮会标签", "description": "控制友方玩家头顶的帮会名称；不控制玩家名字、血条和模型。", "values": [{ "value": "0", "label": "隐藏" }, { "value": "1", "label": "显示" }] },
+    { "id": "showenemy_guild", "file": "systeminfo.ini", "section": "Config", "key": "showenemy_guild", "name": "敌方玩家帮会标签", "description": "控制敌方玩家头顶的帮会名称；不控制玩家名字、血条和模型。", "values": [{ "value": "0", "label": "隐藏" }, { "value": "1", "label": "显示" }] },
+    { "id": "shownpc_name", "file": "systeminfo.ini", "section": "Config", "key": "shownpc_name", "name": "NPC 名字", "description": "控制 NPC 头顶名字；不控制 NPC 模型、数量和交互。", "values": [{ "value": "0", "label": "隐藏" }, { "value": "1", "label": "显示" }] },
+    { "id": "partner_name", "file": "systeminfo.ini", "section": "Config", "key": "partner_name", "name": "伙伴／宠物名字", "description": "控制伙伴、宠物等跟随单位的名字；不控制单位模型。", "values": [{ "value": "0", "label": "隐藏" }, { "value": "1", "label": "显示" }] },
+    { "id": "showfriends_hp", "file": "systeminfo.ini", "section": "Config", "key": "showfriends_hp", "name": "友方玩家血条", "description": "控制友方玩家头顶血条；不控制人物模型和名字。", "values": [{ "value": "0", "label": "隐藏" }, { "value": "1", "label": "显示" }] },
+    { "id": "shownpc_hp", "file": "systeminfo.ini", "section": "Config", "key": "shownpc_hp", "name": "NPC 血条", "description": "控制普通 NPC 头顶血条；不控制 NPC 模型和伤害计算。", "values": [{ "value": "0", "label": "隐藏" }, { "value": "1", "label": "显示" }] },
+    { "id": "showfriendnpc_hp", "file": "systeminfo.ini", "section": "Config", "key": "showfriendnpc_hp", "name": "友方 NPC 血条", "description": "控制友方阵营 NPC 的头顶血条；不控制 NPC 模型。", "values": [{ "value": "0", "label": "隐藏" }, { "value": "1", "label": "显示" }] }
+  ],
+  "profiles": [
+    {
+      "id": "shadow-only",
+      "displayName": "仅降低阴影",
+      "expectedTarget": "把角色与场景阴影配置写为关闭",
+      "tradeoff": "角色与场景阴影关闭；其他列出的显示项保持当前值",
+      "confidence": "确定修改 1 项配置",
+      "changes": [
+        { "file": "system_set.ini", "section": "main", "key": "shadow_quality", "value": "0" }
+      ]
+    },
+    {
+      "id": "labels-only",
+      "displayName": "仅隐藏次要标签",
+      "expectedTarget": "隐藏四类帮会和势力标签，其他列出的显示项保持当前值",
+      "tradeoff": "隐藏玩家与 NPC 头顶的帮会和势力标签",
+      "confidence": "确定修改 4 项配置",
+      "changes": [
+        { "file": "systeminfo.ini", "section": "Config", "key": "shownpc_corpsename", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "showself_guild", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "showfriends_guild", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "showenemy_guild", "value": "0" }
+      ]
+    },
+    {
+      "id": "low-loss",
+      "displayName": "低损耗组合",
+      "expectedTarget": "关闭阴影，并隐藏四类帮会和势力标签",
+      "tradeoff": "降低阴影并隐藏帮会/势力标签；名字、敌方血条、视野和同屏人数保持不变",
+      "confidence": "确定修改 5 项配置",
+      "changes": [
+        { "file": "system_set.ini", "section": "main", "key": "shadow_quality", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "shownpc_corpsename", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "showself_guild", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "showfriends_guild", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "showenemy_guild", "value": "0" }
+      ]
+    },
+    {
+      "id": "crowd-ui",
+      "displayName": "多人场景界面精简",
+      "expectedTarget": "关闭阴影，并隐藏配置中列出的十类头顶界面元素",
+      "tradeoff": "在低损耗组合基础上继续隐藏伙伴/NPC 名字以及友方/NPC 血条",
+      "confidence": "确定修改 10 项配置",
+      "changes": [
+        { "file": "system_set.ini", "section": "main", "key": "shadow_quality", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "shownpc_corpsename", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "showself_guild", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "showfriends_guild", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "showenemy_guild", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "shownpc_name", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "partner_name", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "showfriends_hp", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "shownpc_hp", "value": "0" },
+        { "file": "systeminfo.ini", "section": "Config", "key": "showfriendnpc_hp", "value": "0" }
+      ]
+    }
+  ]
+}

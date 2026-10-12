@@ -1,0 +1,123 @@
+/* Desktop-only legibility. Leave the separately sized in-game overlay alone. */
+html[data-skin]:not([data-overlay="1"]) {
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --sidebar-surface: #101723;
+  --skin-muted: #b2bdcc;
+  --prism-muted: #b2bdcc;
+}
+html[data-skin="light"]:not([data-overlay="1"]) {
+  --sidebar-surface: #e3eaf4;
+  --skin-muted: #4f5e72;
+  --prism-muted: #4f5e72;
+}
+.desktop-workspace {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  text-rendering: auto;
+}
+.desktop-workspace :is(.text-xs, .text-\[9px\], .text-\[10px\], .text-\[11px\], .text-\[12px\]) {
+  font-size: 13px;
+  line-height: 1.7;
+}
+.desktop-workspace :is(.license-subtle, .license-heading p, .account-form label,
+  .license-status, .license-details dt, .license-details dd,
+  .system-spec small, .system-spec strong, .system-setting-main p,
+  .system-setting-state, .system-setting-meta, .system-setting-details > div,
+  .system-section-heading p, .system-advanced-description > p,
+  .quick-tier-footer, .quick-list-toolbar, .quick-row-status, .quick-values,
+  .quick-catalog-heading p, .quick-warning, .quick-apply-note,
+  .dashboard-service, .chart-state, .dashboard-chart footer,
+  .backup-content p, .backup-content time, .dashboard-bottom-note,
+  .assistant-status small, .assistant-drawer footer,
+  .appearance-option small, .appearance-footnote, .appearance-save) {
+  font-size: 13px;
+  line-height: 1.75;
+}
+.desktop-workspace .membership-dialog :is(.license-subtle, .account-form label, button, footer) {
+  font-size: 13px;
+}
+.desktop-workspace .membership-dialog .license-heading h2 { font-size: 18px; }
+.desktop-workspace .membership-dialog > header {
+  position: sticky; top: -24px; z-index: 2;
+  margin: -24px -24px 20px; padding: 22px 24px 16px;
+  background: var(--skin-surface); border-bottom: 1px solid var(--prism-line);
+}
+.desktop-workspace .membership-dialog .license-subtle { margin-top: 10px; }
+.desktop-workspace .membership-dialog input { min-height: 44px; font-size: 14px; }
+.desktop-workspace .workspace-brand small { font-size: 12px; color: var(--skin-muted); }
+.desktop-workspace .workspace-sidebar .workspace-nav-item > svg { stroke-width: 1.8; }
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  html[data-skin="light"] .desktop-workspace .workspace-sidebar {
+    box-shadow: none;
+  }
+  .desktop-workspace .workspace-nav-item.prism-nav-active {
+    background: transparent;
+    color: var(--prism-accent-strong);
+    border-radius: 12px;
+  }
+  .desktop-workspace .workspace-nav-item.prism-nav-active::before {
+    display: block; position: absolute; left: 3px; top: calc(50% - 21px);
+    width: 42px; height: 42px; bottom: auto; border-radius: 12px;
+    background: var(--action-bg); box-shadow: none;
+  }
+  html[data-skin] .desktop-workspace .workspace-nav-item.prism-nav-active > svg {
+    position: relative; color: var(--action-ink);
+  }
+  .desktop-workspace .workspace-nav-item.prism-nav-active > span { position: relative; }
+}
+/* Keep wheel, touchpad and keyboard scrolling without changing the content
+   width when the drawer opens. Scope this to the menu, not page scrollbars. */
+html .desktop-workspace .workspace-navigation {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html .desktop-workspace .workspace-navigation::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  html .desktop-workspace .workspace-sidebar .sidebar-backup {
+    min-height: 44px;
+    padding: 0 2px;
+    gap: 8px;
+    border: 0;
+    background: transparent;
+    white-space: nowrap;
+  }
+  html .desktop-workspace .workspace-sidebar .sidebar-backup > svg:first-child {
+    box-sizing: border-box;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    padding: 11px;
+    border: 1px solid var(--prism-line);
+    border-radius: 12px;
+    background: var(--skin-surface);
+    stroke-width: 1.8;
+  }
+  html .global-signin-dock .global-signin-reminder {
+    height: 44px;
+    border: 0;
+    background: transparent;
+  }
+  html .global-signin-dock .global-signin-reminder > svg:first-child {
+    stroke-width: 1.8;
+  }
+  html .desktop-workspace .workspace-sidebar .sidebar-backup:is(:hover, :focus-visible) > svg:first-child,
+  html .global-signin-dock .global-signin-reminder:is(:hover, :focus-visible) > svg:first-child {
+    border-color: var(--prism-accent-strong);
+  }
+  html .desktop-workspace .workspace-sidebar .sidebar-backup:focus-visible {
+    outline: 2px solid var(--prism-accent-strong);
+    outline-offset: 2px;
+    border-radius: 12px;
+  }
+}
+@media (max-width: 680px) {
+  .membership-offer { grid-template-columns: 1fr; }
+  .membership-qr { width: 216px; justify-self: center; }
+}
+@media (max-width: 600px) {
+  .desktop-workspace .membership-dialog > header { top: -18px; margin: -18px -18px 18px; padding: 18px; }
+}

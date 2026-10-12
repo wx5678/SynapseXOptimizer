@@ -1,0 +1,2639 @@
+{
+  "schema": 1,
+  "source": "用户提供的电源配置文件；2026-09-16 参数审计",
+  "note": "原始整包计划，包含 AC/DC 和其他设备参数。名称不是 CPU 适配证明；仅在用户明确选择后导入，不自动启用。",
+  "items": [
+    {
+      "id": "588341b03a49079cca06d25328418b09acb4935603b8e401a3704ac0c81815bd",
+      "name": "纯大核",
+      "files": [
+        "intel Only Performance Core(intel纯大核专用).pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 20,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 30,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 1,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数"
+      ]
+    },
+    {
+      "id": "646a6936f9bc073289c40fa6559df90a37ef214b81cb63528721380059e3b71b",
+      "name": "低延迟高性能英特尔",
+      "files": [
+        "低延迟高性能英特尔.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 5,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 3,
+        "decreasePolicy": 2,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 2,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "169aa44e351bed7b73447aa6fc9edea661b1dabb1c099e18e4e80c81408c6ba6",
+      "name": "低延迟高性能AMD",
+      "files": [
+        "低延迟高性能AMD.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 5,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 3,
+        "decreasePolicy": 2,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "b21074e97aa5cb111cef8eaf2825d2ac5de276863d02acbc10f436895255c42b",
+      "name": "高性能",
+      "files": [
+        "高性能.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 5,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "eb8e66ca6e74da429566fc095c834ea88d249cf7e6a29e9f7849158d0cd3d144",
+      "name": "孤单障碍专属",
+      "files": [
+        "孤单障碍定制电源.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 1,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "7f7ec00dcf843b9e945fd041e02abae80a5f0cb8f72311ef652931a776d11103",
+      "name": "孤单障碍专属",
+      "files": [
+        "抖音孤单障碍专属电源计划.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 25,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 5,
+        "pcieLinkState": 1,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "0e6241da930ae849e38b1baa7e9e203f38daf2d7aa3396d87897d9d874fadc73",
+      "name": "节能",
+      "files": [
+        "节能.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 0,
+        "energyPreference": 50,
+        "coreParkingMin": 10,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 200,
+        "increaseThreshold": 90,
+        "decreaseThreshold": 60,
+        "increasePolicy": 1,
+        "decreasePolicy": 2,
+        "coolingPolicy": 0,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 2,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "已读取；不代表经性能测试验证"
+      ]
+    },
+    {
+      "id": "846e52653aa3ecfe31cc4bc19858fb7a4f84ec2702d6b5019c48b351af94300f",
+      "name": "平衡",
+      "files": [
+        "平衡.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 60,
+        "energyPreference": 25,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 1,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "4ecb2a32499bef90b6b6997ae77c03af046c136e38bb36c79af4f4d7d574a48c",
+      "name": "卓越性能",
+      "files": [
+        "7945HX - 副本.pow",
+        "7945HX.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 0,
+        "boostMode": 1,
+        "boostPolicy": 0,
+        "energyPreference": 100,
+        "coreParkingMin": 0,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 1,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 100,
+        "increasePolicy": 1,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 4,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "性能检查间隔小于 5ms；无实测收益证据",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数"
+      ]
+    },
+    {
+      "id": "be7e4fdb0c311bc280245c537a81e180fb8513a6e9172a1f393de23d8800fdfa",
+      "name": "卓越性能",
+      "files": [
+        "卓越性能.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "1f487487ef98b534502cb4b1b5f40d5f9cade1b96e9c44b786578eff51fd9000",
+      "name": "Adamx Tweaking Utility Power Plan",
+      "files": [
+        "adamx.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "16057cbae784f03e25a16a61e703399d25aa47663eac6f1cca1f45d39fbcb02b",
+      "name": "Advanced SystemCare电源计划",
+      "files": [
+        "Advanced SystemCare电源计划.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "395dcac8f1b4eb5c2fc506fd4e6b07a3198b34f50bf5a7506c6da6f7ef5c4e77",
+      "name": "AMD",
+      "files": [
+        "AMD.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 0,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "d896eadef219194f6c06bf1eee6a9c8fab4c55dc1ac16dac89a6276f12ba1ea0",
+      "name": "AMD Ryzen™ Balanced",
+      "files": [
+        "AMD Ryzen™ Balanced.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 90,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 60,
+        "energyPreference": 25,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 25,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 1,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "6cf954dd4c5f2a7c800e06ae4d13b4766a601534ad5ec990cf5f61afcd966834",
+      "name": "Ancels Power Plan",
+      "files": [
+        "ancel.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "30af3f4be325341d64b87a9dce109617ff675bba4e9dd239cdcbf9cb9caffd8b",
+      "name": "Atlas Power Plan",
+      "files": [
+        "atlas.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "ac984c88606ff1f36b3baca48ba0cdb4b2109c7d31bbae27bfc684a43716be14",
+      "name": "ayo",
+      "files": [
+        "ayo.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 0,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 2,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "3cc176f7c601806b3bc5fc6aec02190fc807057a6556a16fc3f40e0088920d00",
+      "name": "Bitsum Highest Performance",
+      "files": [
+        "Bitsum Highest Performance.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 1,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "509c0446960e4d8f3904899e35e471d62a7f679c4571444341cf1197e4e599aa",
+      "name": "Bitsum Highest Performance",
+      "files": [
+        "bitsum.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "84ef09308bdc80a5d58711cd493aaf7caa49e4bf5d9cc04bc88dc5b6016d0547",
+      "name": "Bitsum Highest Performance",
+      "files": [
+        "Bitsum Highest Performance (所有U通用).pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "50d869f328fd29cc3a079d401d895ee3ab68db5fc4fb3e71af8b30ebc03dc0bf",
+      "name": "Calypto's Low Latency",
+      "files": [
+        "calypto.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 25,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 99,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "cc97573591744f126cc3972af27fca16c8900e9e6d080559b1cc888ea388d3f9",
+      "name": "CatGamerOP Low Latency (Idle Disabled)",
+      "files": [
+        "catNoIdle.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 1,
+        "autonomousMode": 0,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "禁用处理器空闲状态；不纳入通用方案",
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "6abfe2ce071e319275c528cba8f293d55aafff90a0754a25b0ccdf347cf3a389",
+      "name": "CatGamerOP Low Latency (Idle Enabled)",
+      "files": [
+        "cat.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 0,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "a2f73c6ac2b3ef363235f6c4eff850179e7581d53e58ce5eff4e562e46b68b18",
+      "name": "CatGamerOP Low Latency for AMD PBO (Idle Disabled)",
+      "files": [
+        "catNoIdleAMD.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 1,
+        "autonomousMode": 0,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "禁用处理器空闲状态；不纳入通用方案",
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "b64631b19c58ef49651e1288eb59163fa43632e3628fd00a245d9fa1f58f5d5e",
+      "name": "CatGamerOP Low Latency for AMD PBO (Idle Enabled)",
+      "files": [
+        "catAMD.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 0,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "4100276757e85016e62146bec8b2e0b8f1d956aa2cf8d74ea360a62a58e1264b",
+      "name": "Catto Power Plan",
+      "files": [
+        "#Catto Windows 10.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 1,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 100,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "禁用处理器空闲状态；不纳入通用方案",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "d078deb7cd52f1c51006b176672c3afafd5a1d40f783de21ec220b3cea3ccfcf",
+      "name": "Catto Power Plan",
+      "files": [
+        "Catto Power Plan.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 1,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "禁用处理器空闲状态；不纳入通用方案",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "70917538c08a526d894a406e7f73b5c3e55a64a347c5c31eb2cb0740ac443caf",
+      "name": "Catto Power Plan (Idle Enabled)",
+      "files": [
+        "#Catto Windows 10 (Idle Enabled).pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 100,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "aed6df22ae96c766a0f1b94a341726f8e127474777fc9ed512b0565c13670da7",
+      "name": "Catto Power Plan (Idle Enabled)",
+      "files": [
+        "FOX+林北（149）.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "ff6cd6362a45ff618598043b6a65a2e18d4c369630d3884d5d0499910acc1de9",
+      "name": "Catto Power Plan (Idle Enabled)",
+      "files": [
+        "Catto Power Plan (Idle Enabled).pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "3538e6065bd98b04416f17f5828ef4dfca7543550f7cb1594c839eac23dc5161",
+      "name": "CoreVeeAir's",
+      "files": [
+        "core.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "bc301e5a86e42f2cd7e55d418b59b21ccabf34caaefa5cde8a6755caa3a8eb4e",
+      "name": "Dun修改版英特尔",
+      "files": [
+        "Dun修改版英特尔.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 0,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 2,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "1a67183c4347970b6395b041c48410839a5017377120460dc4037d46564e81ef",
+      "name": "EXM Free Power Plan V6",
+      "files": [
+        "exmfree.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 100,
+        "decreaseThreshold": 100,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "3ca096112a2939b6cb10c11e43da85f2839e023faa00973b49e7be9079e08a6a",
+      "name": "f1rst's pow v2",
+      "files": [
+        "f1rst_v2.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 2,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "8f580036d377e6f71e024a6135270ed3d4efabfc518c61340655f8610ef21fdd",
+      "name": "FRAMESYNC Labs Boost",
+      "files": [
+        "FrameSyncBoost.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 1,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 20,
+        "increaseThreshold": 100,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 2,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "aa05f217c85bd7d6b6e2a7db44bd5e8bbc1c6e18b4f6b24575f557593d7c5402",
+      "name": "FSOS AMD Gaming",
+      "files": [
+        "FSOS AMD Gaming.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 3,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 20,
+        "increaseThreshold": 10,
+        "decreaseThreshold": 0,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 2,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "997a0e3d750f277702fc03cbe157d0c125a21e01201398dc6f2cc2d844969449",
+      "name": "Hos AMD电源计划通用",
+      "files": [
+        "Hos AMD电源计划通用.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 50,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 100,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数"
+      ]
+    },
+    {
+      "id": "35ae7625a8feb60f6f4f78ff5e9554210dbdd5371550aea46f4c2c32dacefd99",
+      "name": "Hos Intel电源计划",
+      "files": [
+        "Hos Intel电源计划.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 10,
+        "increasePolicy": 3,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 2,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "5fa32b2853aa59140133c64458d112eab4eb3eddf31fe6e73c802cbdc8af7fc3",
+      "name": "Hybred Low Latency (HP)",
+      "files": [
+        "hybred.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 100,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "2577b0ed8471173e3c099ac5d77578ed99349ff2cd2b217c2b18149842c3b01a",
+      "name": "imribiy Power Plan",
+      "files": [
+        "xos.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 2,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "8f648545681b469ea68705bafd21fa2f65830736be3079d3dc344a7cbc12a719",
+      "name": "Intel Core™ Ultimate HighPower 10-v1",
+      "files": [
+        "intel.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 5,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "052ac981e119db63b90e39cc44d502ba60e789b40505f466be196d31fe240399",
+      "name": "Intel Gaming Power Plan",
+      "files": [
+        "FSOS Intel Gaming Power Plan.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "0e41edd749126d44c4f92d2c5f67e7a1abe0809a4bd69aff2a88f8f90c206b61",
+      "name": "Khorvie's PowerPlan",
+      "files": [
+        "khorvie.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 100,
+        "decreaseThreshold": 100,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "bbf54900cfd792a2a572d7fd55763fa938bc9b88957196818ae94e0eddd7e453",
+      "name": "Kirby PowerPlan v1.2",
+      "files": [
+        "kirby.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "b4fd46b063397cb4c36a030aeaba3a6583e46d4886222425b8ef82a403377512",
+      "name": "Kizzimo's Extreme Low Latency",
+      "files": [
+        "kizzimo.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 0,
+        "boostMode": 3,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 1,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 100,
+        "increasePolicy": 2,
+        "decreasePolicy": 0,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "性能检查间隔小于 5ms；无实测收益证据",
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "8ad25f9c2e1e0dacf5dff727302dafa76d8a8b4fc34339de41c95f2fc01b4451",
+      "name": "kumares amd",
+      "files": [
+        "kumares amd.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 100,
+        "increasePolicy": 3,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "ac50f7eebb4223693235e33fcf949969aee536e29ce3786b96f03342597f044f",
+      "name": "Lawliet's power plan",
+      "files": [
+        "lawliet.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 100,
+        "increasePolicy": 3,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 2,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "4269d7e708c7f7daa7857f17ca886939bbd731ecc592aec87b75456f1099b10b",
+      "name": "Melody Low Latency Power Plan",
+      "files": [
+        "Melody Low Latency Power Plan.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 1,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "禁用处理器空闲状态；不纳入通用方案",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "071431db413a4ff97701bfab6b84938d25859c0819f9d441b0930f9196fde56d",
+      "name": "Nexus LiteOS Powerplan",
+      "files": [
+        "nexus.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 0,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "adf40313ebb5a6816826ca12bb1bf7d91334b9b8a3c614286e0eec33ac775e96",
+      "name": "NovaOS-test",
+      "files": [
+        "NovaOS.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 0,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 100,
+        "increasePolicy": 2,
+        "decreasePolicy": 0,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 5,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "9497bc7c8e75f869be30306e6e787f2466dd9680ff1454f47bf99ee07e97e268",
+      "name": "Only AMD Ryzen™ Highest Performance",
+      "files": [
+        "Only AMD Ryzen™ Highest Performance (AMD纯大核通用).pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 10,
+        "increasePolicy": 3,
+        "decreasePolicy": 0,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "5c2003f0f5a0aea329f70f82803455fb254cdfa1464e59336830c179a75a4a3f",
+      "name": "PC",
+      "files": [
+        "kaisen.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "45ceaa09e80cdfe97da5225ec3b3c6b54b3e75f3be04821fdd732b6fd28b8fef",
+      "name": "PeakOS",
+      "files": [
+        "PeakOS.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "a800cf4a013faf538e8a115c43090bf427fc67d28a98797d83c3add28b0829c7",
+      "name": "Performance for AMD",
+      "files": [
+        "Performance for AMD.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 1,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "9e7ad4a26a881416986862fa61b1645b8f52774b104efc36f399a9573e3a17d0",
+      "name": "PowerX v1",
+      "files": [
+        "PowerX v1.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 1,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 1,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "限制线程使用某类处理器；不适合跨 CPU 通用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "dafb7f4464dec254817e175557ec2bf4ea618ca016a4b0828c61388c3225290c",
+      "name": "PowerX v2",
+      "files": [
+        "powerx.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 1,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 1,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "限制线程使用某类处理器；不适合跨 CPU 通用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "6212e2bd022b6cf1c187699427e184b6be01374e96ab69ce0876e05217d669df",
+      "name": "PowerX v2",
+      "files": [
+        "PowerX v2.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 1,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 1,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "限制线程使用某类处理器；不适合跨 CPU 通用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "0bb49bdb753c3df8d77f2bad7e9eaf1ea3050295dcf44128c4a9e734168ae1f5",
+      "name": "PowerX v3",
+      "files": [
+        "PowerX v3(intel通用).pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 1,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 1,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "限制线程使用某类处理器；不适合跨 CPU 通用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "5c3d72ab729d46dab620dc0581cd2f490462dba8d0f088c1df1afea2f6762fcb",
+      "name": "Revision - Ultra Performance",
+      "files": [
+        "Revision - Ultra Performance.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 10,
+        "decreaseThreshold": 8,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 1
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "60f4b41364d19c814a3b5e0e9d37a0bf066272622e1f91b5bebb3c680bfb47fd",
+      "name": "RIS（英特尔大小核）",
+      "files": [
+        "RISintel2.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 0,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 1,
+        "increasePolicy": 3,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 2,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "d509399a5328d907967af01014a6daad9fdbd0d5dbbbfbb9a1060eaba3106a50",
+      "name": "RW performance PRO  Power Scheme",
+      "files": [
+        "RW performance PRO  Power Scheme .pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 200,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "969861e034cd80317eeadb847f9e669e3d95c2b375b72c22e7f02955f29c7ccb",
+      "name": "Sapphire",
+      "files": [
+        "sapphire.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 0,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "1df668916e46c28af453315321d5f99dff162c21242cfb09fc752c4dbcfaccf3",
+      "name": "Sapphire",
+      "files": [
+        "Sapphire.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 0,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "0e46e792a8bd389d2b5840bbb8ef67b5a5a9178dcf0ea3db0a1e39d6fd9e05aa",
+      "name": "SapphireOS 电源计划",
+      "files": [
+        "SapphireOS 电源计划.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 0,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "add33a37051b329002c80ef4d9bb3c75cb6cda09110990b96ab86d545810609a",
+      "name": "SapphireOS 电源计划",
+      "files": [
+        "SapphireOS 电源计划(稳定帧率).pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 0,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "4b683f9831b412f96cc2df247d71cc29d666690a6feff9401deaf6e1e0999d73",
+      "name": "suki9800x3d",
+      "files": [
+        "QM.pow",
+        "xlst amd单ccd.pow"
+      ],
+      "highRisk": true,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 0,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 1,
+        "increasePolicy": 3,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "关闭自主性能管理；硬件相关，不直接套用",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "4b92c0e92660b0795873b5d950d50074d4ad9dadadeeb50548a97c95e375663c",
+      "name": "Ultra Performance",
+      "files": [
+        "optimized[RW trash].pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 10,
+        "decreaseThreshold": 8,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 2,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "26891596d5eb88a1667189b43640c2b2425e56dbad3a9279d8cb0a0e379ff637",
+      "name": "vain",
+      "files": [
+        "misakamiro.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 0,
+        "decreaseThreshold": 100,
+        "increasePolicy": 2,
+        "decreasePolicy": 0,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "81279978cd8d2eba4805d0ff0110054634235b1793090605783cac23c277be90",
+      "name": "VainOS Power Plan",
+      "files": [
+        "VainOS.pow",
+        "VainOS(异类线程调度全部处理器).pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 10,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 0,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "7243639d201bb82d465c09d6b6f287a79051c30ecf3578dfff983c53c7965356",
+      "name": "VantageOS Power Plan",
+      "files": [
+        "VantageOS Power Plan.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 2,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "5cb58fffa9e0ac91bd365ef7b226e00e3f4694ea2192461d65624f8176b1e1f8",
+      "name": "VTRL Optimized",
+      "files": [
+        "vtrl.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 1,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 2,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "e8bb5efa9fbf1ea324c31e08affbe75228a5b2d0322349388232c7f37b71de99",
+      "name": "X3D_Power_Plan",
+      "files": [
+        "X3D_Power_Plan(X3D专用).pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 5000,
+        "increaseThreshold": 1,
+        "decreaseThreshold": 10,
+        "increasePolicy": 3,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "6c857014156f608a25df041d1816267a0e7eaeaad2bc034c8bca347e72935c40",
+      "name": "Xilly's Public PowerPlan",
+      "files": [
+        "xilly.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "a4891013432b271f6ce3054579642cfb1a2c392007070f50f78a8246769da76a",
+      "name": "XOS 电源计划",
+      "files": [
+        "XOS 电源计划(低延迟).pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 0,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 10,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 15,
+        "increaseThreshold": 30,
+        "decreaseThreshold": 10,
+        "increasePolicy": 2,
+        "decreasePolicy": 2,
+        "coolingPolicy": 1,
+        "heteroPolicy": 0,
+        "schedulingPolicy": 5,
+        "shortSchedulingPolicy": 2,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    },
+    {
+      "id": "636def95a1275cac82cf7b44ed2052a89d140225fd61742be73bb307176a8722",
+      "name": "Yakumo's Extreme Gaming",
+      "files": [
+        "Yakumo.pow"
+      ],
+      "highRisk": false,
+      "values": {
+        "minProcessor": 100,
+        "maxProcessor": 100,
+        "idleDisabled": 0,
+        "autonomousMode": 1,
+        "boostMode": 2,
+        "boostPolicy": 100,
+        "energyPreference": 0,
+        "coreParkingMin": 100,
+        "coreParkingMax": 100,
+        "performanceCheckMs": 100,
+        "increaseThreshold": 10,
+        "decreaseThreshold": 5,
+        "increasePolicy": 2,
+        "decreasePolicy": 1,
+        "coolingPolicy": 1,
+        "heteroPolicy": 4,
+        "schedulingPolicy": 0,
+        "shortSchedulingPolicy": 0,
+        "pcieLinkState": 0,
+        "usbSelectiveSuspend": 0
+      },
+      "warnings": [
+        "长短线程均为所有处理器；不等于所有核心常驻工作",
+        "还改动 PCIe/USB 节能；新 CPU 方案不复制这些设备参数",
+        "最低处理器状态 100%，待机功耗和温度更高",
+        "关闭核心停放，适合固定场景测试但会提高空闲功耗"
+      ]
+    }
+  ],
+  "unavailable": [
+    {
+      "name": "KernelOS 性能 V6.1 启用空闲.pow",
+      "reason": "文件格式无效，不能导入"
+    },
+    {
+      "name": "抖音孤单障碍专属电源计划.rar",
+      "reason": "独立压缩包加密，未成功读取；未将解压残片入库"
+    }
+  ]
+}

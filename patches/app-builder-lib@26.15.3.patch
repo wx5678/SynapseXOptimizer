@@ -1,0 +1,15 @@
+diff --git a/out/util/electronGet.js b/out/util/electronGet.js
+index a941f9d20c10ca58a84b9a600b0df468631aae01..650d21df2ea439b4422999dc497ac017294f9a0b 100644
+--- a/out/util/electronGet.js
++++ b/out/util/electronGet.js
+@@ -66,7 +66,9 @@ function resolveCacheMode() {
+         builder_util_1.log.debug({ mode }, `cache mode overridden via env var ${varName}`);
+         return mode;
+     }
+-    return get_1.ElectronDownloadCacheMode.ReadWrite;
++    // @electron/get 3 does not export the enum, but ReadWrite is defined as 0
++    // by the cache-aware API used below. Keep the default compatible with both.
++    return get_1.ElectronDownloadCacheMode?.ReadWrite ?? 0;
+ }
+ async function extractZipStreaming(file, dir) {
+     var _a;

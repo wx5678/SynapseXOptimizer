@@ -1,0 +1,2 @@
+type ProductConfig={month_fen:number;year_fen:number;wechat:string;qr_data:string;service_text?:string;update:{enabled:boolean;version:string;mode:'optional'|'mandatory';url:string;sha256:string;size:number;notes:string}};
+type ProductState={configured:boolean;checked:boolean;checking:boolean;error:string;config:ProductConfig|null;version:string;available:boolean;required:boolean;progress:{phase:string;received:number;total:number;message:string}};

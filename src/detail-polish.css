@@ -1,0 +1,94 @@
+/* Selected graphite mock: detail refinement, not a new layout or OSD skin. */
+.desktop-workspace .workspace-main { padding-bottom:112px; }
+.desktop-workspace .workspace-nav-item { gap:12px; border-radius:8px; font-weight:500; }
+.desktop-workspace .workspace-nav-item svg { width:18px; height:18px; stroke-width:1.6; flex-shrink:0; }
+.desktop-workspace .workspace-nav-item.prism-nav-active { font-weight:600; box-shadow:inset 0 1px #ffffff04; }
+.desktop-workspace .workspace-context { font-size:12px; }
+.desktop-workspace .workspace-context strong { font-weight:500; }
+.desktop-workspace .dashboard-heading { margin-bottom:24px; }
+.desktop-workspace .dashboard-heading h1 { font-size:32px; font-weight:600; letter-spacing:-.025em; }
+.desktop-workspace .dashboard-heading p { font-size:14px; line-height:1.7; margin-top:8px; }
+.desktop-workspace .dashboard-service { font-size:11px; }
+.desktop-workspace .dashboard-session { border-radius:12px; box-shadow:inset 0 1px #ffffff07,0 12px 28px -24px #000b; margin-bottom:20px; }
+.desktop-workspace .dashboard-game { min-height:256px; padding:28px; }
+.desktop-workspace .game-session-label { margin-bottom:12px; }
+.desktop-workspace .game-state { display:inline-flex; align-items:center; gap:7px; font-size:12px; line-height:20px; padding:3px 10px; border-radius:16px; }
+.desktop-workspace .game-state-dot { width:6px; height:6px; border-radius:50%; background:currentColor; }
+.desktop-workspace .game-heading h2 { font-size:38px; font-weight:600; letter-spacing:-.025em; }
+.desktop-workspace .game-process { font-size:13px; gap:10px; margin-top:14px; }
+.desktop-workspace .game-process > svg { width:16px; height:16px; flex-shrink:0; }
+.desktop-workspace .game-switch { font-size:12px; }
+.desktop-workspace .game-cover { width:52%; opacity:.85; }
+.desktop-workspace .game-actions { margin-top:22px; gap:12px; }
+.desktop-workspace .game-actions button { min-height:44px; padding:10px 18px; font-size:14px; gap:10px; }
+html[data-skin] .desktop-workspace .workbench-primary { border-radius:8px; box-shadow:inset 0 1px #ffffff55,inset 0 -1px #00000016,0 4px 10px -7px #649ae890; }
+.desktop-workspace .workbench-secondary { border-radius:8px; box-shadow:inset 0 1px #ffffff05; }
+.desktop-workspace .workbench-dashboard button svg { flex-shrink:0; stroke-width:1.6; }
+.desktop-workspace .workbench-dashboard button:focus-visible { outline:2px solid var(--prism-accent-strong); outline-offset:3px; }
+.desktop-workspace .dashboard-metrics { padding:20px 0; background:var(--skin-input); }
+.desktop-workspace .dashboard-metrics > div { padding:0 28px; }
+.desktop-workspace .dashboard-metrics span { font-size:12px; letter-spacing:0; gap:8px; }
+.desktop-workspace .dashboard-metrics em { font-size:11px; }
+.desktop-workspace .dashboard-metrics strong { display:flex; align-items:baseline; font-size:38px; font-weight:600; letter-spacing:-.03em; line-height:1.2; margin-top:10px; font-variant-numeric:tabular-nums; }
+.desktop-workspace .dashboard-metrics small { margin-left:3px; font-size:16px; font-weight:500; }
+.desktop-workspace .dashboard-detail-grid { gap:20px; }
+.desktop-workspace .dashboard-chart,.desktop-workspace .dashboard-backup { padding:24px; border-radius:12px; box-shadow:inset 0 1px #ffffff06; }
+.desktop-workspace .dashboard-chart h2,.desktop-workspace .dashboard-backup h2 { font-size:15px; font-weight:600; }
+.desktop-workspace .dashboard-chart .workbench-secondary { min-height:36px; padding:7px 12px; font-size:12px; }
+.desktop-workspace .chart-state { font-size:11px; }
+.desktop-workspace .chart-plot { height:176px; margin-top:20px; }
+.desktop-workspace .chart-plot text { font-size:12px; font-variant-numeric:tabular-nums; }
+.desktop-workspace .chart-plot line { stroke-opacity:.65; stroke-width:1; vector-effect:non-scaling-stroke; }
+.desktop-workspace .chart-plot path { stroke-width:1.5; stroke-linejoin:round; stroke-linecap:round; }
+.desktop-workspace .dashboard-chart footer { font-size:11px; line-height:1.6; margin-top:14px; }
+.desktop-workspace .dashboard-backup > header { padding-bottom:16px; border-bottom:1px solid var(--prism-line); margin-bottom:20px; }
+.desktop-workspace .backup-icon { margin-bottom:12px; color:var(--skin-soft); }
+.desktop-workspace .backup-content h3 { font-size:14px; font-weight:600; }
+.desktop-workspace .backup-content p { font-size:12px; line-height:1.8; }
+.desktop-workspace .backup-content time { margin-top:12px; font-size:11px; font-variant-numeric:tabular-nums; }
+.desktop-workspace .backup-content button { margin-top:22px; min-height:36px; padding:7px 12px; font-size:12px; }
+.desktop-workspace .dashboard-bottom-note { font-size:11px; line-height:1.7; }
+html[data-skin="light"] .desktop-workspace .dashboard-session { box-shadow:0 8px 24px -20px #22354b35; }
+html[data-skin="light"] .desktop-workspace .global-signin-reminder { box-shadow:0 8px 24px -12px #22354b35; }
+@media(min-width:1440px) {
+  .desktop-workspace .workspace-sidebar { width:264px; padding-top:30px; }
+  .desktop-workspace .prism-titlebar { left:264px; }
+  .desktop-workspace .workspace-main { margin-left:264px; padding:54px 32px 112px 34px; }
+  .desktop-workspace .workspace-brand strong { font-size:24px; }
+  .desktop-workspace .workspace-nav-item { font-size:16px; min-height:52px; margin-block:6px; }
+  .desktop-workspace .dashboard-heading h1 { font-size:38px; }
+  .desktop-workspace .dashboard-heading p { font-size:16px; }
+  .desktop-workspace .dashboard-heading { margin-bottom:30px; }
+  .desktop-workspace .dashboard-game { min-height:276px; padding:30px; }
+  .desktop-workspace .game-heading h2 { font-size:46px; }
+  .desktop-workspace .game-process { font-size:16px; }
+  .desktop-workspace .game-switch { font-size:14px; }
+  .desktop-workspace .game-actions button { font-size:17px; min-height:54px; padding:12px 24px; }
+  .desktop-workspace .dashboard-metrics strong { font-size:42px; }
+  .desktop-workspace .dashboard-metrics span { font-size:14px; }
+  .desktop-workspace .dashboard-metrics em { font-size:12px; }
+  .desktop-workspace .dashboard-chart h2,.desktop-workspace .dashboard-backup h2 { font-size:18px; }
+  .desktop-workspace .backup-content h3 { font-size:16px; }
+  .desktop-workspace .backup-content p { font-size:13px; }
+}
+@media(max-width:1100px) {
+  .desktop-workspace .dashboard-game { padding:24px; min-height:242px; }
+  .desktop-workspace .game-heading h2 { font-size:32px; }
+  .desktop-workspace .dashboard-metrics > div { padding-inline:20px; }
+  .desktop-workspace .backup-content button { margin:0 0 0 auto; }
+  .desktop-workspace .dashboard-backup > header { margin-bottom:14px; }
+}
+@media(max-width:767px) {
+  .desktop-workspace .workspace-main { padding-bottom:108px; }
+  .desktop-workspace .dashboard-heading h1 { font-size:28px; }
+  .desktop-workspace .game-heading h2 { font-size:28px; white-space:normal; overflow-wrap:anywhere; }
+  .desktop-workspace .game-cover { opacity:.25; }
+  .desktop-workspace .game-actions { flex-wrap:wrap; }
+  .desktop-workspace .game-actions button { font-size:13px; }
+  .desktop-workspace .dashboard-metrics > div { padding-inline:12px; }
+  .desktop-workspace .dashboard-metrics strong { font-size:28px; }
+  .desktop-workspace .dashboard-metrics span { font-size:11px; }
+  .desktop-workspace .dashboard-chart,.desktop-workspace .dashboard-backup { padding:18px; }
+  .desktop-workspace .dashboard-chart h2 { font-size:14px; }
+  .desktop-workspace .backup-content button { margin-left:0; }
+}

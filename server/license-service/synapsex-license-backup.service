@@ -1,0 +1,14 @@
+[Unit]
+Description=SynapseX SQLite online backup with integrity verification
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/opt/synapsex-license/current
+ExecStart=/usr/bin/python3 manage.py backup /var/backups/synapsex-license
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/synapsex-license /var/backups/synapsex-license

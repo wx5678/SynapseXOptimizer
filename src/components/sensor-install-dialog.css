@@ -1,0 +1,15 @@
+.sensor-install-dialog { width:min(540px,calc(100vw - 40px)); }
+.sensor-install-package { display:flex; align-items:center; gap:14px; padding:16px; border:1px solid var(--prism-line); border-radius:13px; background:var(--skin-input); }
+.sensor-install-package-icon { display:grid; place-items:center; width:40px; height:40px; flex-shrink:0; border-radius:11px; color:var(--prism-accent-strong); background:color-mix(in srgb,var(--prism-accent-strong) 10%,transparent); }
+.sensor-install-package strong { display:flex; align-items:center; gap:9px; font-size:16px; font-weight:600; }
+.sensor-install-package strong span { padding:2px 7px; border:1px solid var(--prism-line); border-radius:6px; font-size:11px; font-weight:500; color:var(--skin-muted); }
+.sensor-install-package p { margin:5px 0 0; font-size:12px; line-height:1.6; color:var(--skin-muted); }
+.sensor-install-trust { display:flex; align-items:flex-start; gap:9px; margin:16px 0; color:var(--prism-accent-strong); }
+.sensor-install-trust svg { flex-shrink:0; margin-top:3px; }
+.sensor-install-trust p { margin:0; font-size:12px; line-height:1.8; color:var(--skin-muted); }
+.sensor-install-caution { padding:15px 16px; border:1px solid var(--prism-line); border-radius:12px; background:var(--skin-input); }
+.sensor-install-caution strong { font-size:13px; font-weight:600; }
+.sensor-install-caution ul { margin:8px 0 0; padding-left:17px; list-style:disc; color:var(--skin-muted); font-size:12px; line-height:1.9; }
+.sensor-install-caution li+li { margin-top:3px; }
+.sensor-install-safety { margin:14px 0 0; color:var(--skin-muted); font-size:12px; line-height:1.8; }
+.sensor-install-dialog footer .prism-button-primary { display:flex; align-items:center; justify-content:center; gap:8px; }

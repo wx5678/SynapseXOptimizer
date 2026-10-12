@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "results": [
+    {
+      "layout": "horizontal",
+      "geometry": {
+        "x": 902,
+        "y": 13,
+        "w": 26,
+        "h": 26,
+        "drag": "no-drag",
+        "handle": "drag"
+      },
+      "clicks": "metric and padding retained; X closed",
+      "nativeClose": "guarded"
+    },
+    {
+      "layout": "grid",
+      "geometry": {
+        "x": 348,
+        "y": 16,
+        "w": 26,
+        "h": 26,
+        "drag": "no-drag",
+        "handle": "drag"
+      },
+      "clicks": "metric and padding retained; X closed",
+      "nativeClose": "guarded"
+    }
+  ]
+}

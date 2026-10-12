@@ -1,0 +1,35 @@
+.desktop-workspace .workspace-top-actions { gap:12px; min-width:0; flex-shrink:0; letter-spacing:normal; }
+.desktop-workspace .toolbar-connection { display:inline-flex; align-items:center; gap:7px; margin-right:2px; white-space:nowrap; color:var(--skin-muted); font-size:12px; }
+.toolbar-connection-dot { width:6px; height:6px; border-radius:50%; flex:none; background:var(--skin-muted); }
+.toolbar-connection.is-connected .toolbar-connection-dot { background:var(--status-success,#73cbb6); }
+.desktop-workspace .workspace-utility-group { display:flex; align-items:center; gap:2px; height:44px; padding:4px; border:1px solid var(--prism-line); border-radius:12px; background:var(--skin-input); }
+.desktop-workspace .workspace-utility-group :is(.toolbar-update,.appearance-trigger),
+.desktop-workspace .workspace-utility-group #workspace-help-slot .assistant-trigger { display:inline-flex; justify-content:center; align-items:center; gap:7px; height:34px; min-height:34px; padding:0 10px; border:0; border-radius:8px; background:transparent; color:var(--skin-soft); font-size:12px; line-height:1; white-space:nowrap; box-shadow:none; }
+.desktop-workspace .workspace-utility-group svg { width:16px; height:16px; flex:none; stroke-width:1.7; }
+.workspace-utility-group #workspace-help-slot:empty { display:none; }
+.desktop-workspace .toolbar-account { height:44px; min-height:44px; max-width:242px; gap:10px; padding:4px 11px 4px 6px; border:1px solid var(--prism-line); border-radius:12px; background:var(--skin-surface); box-shadow:none; color:var(--prism-text); }
+.toolbar-account .toolbar-avatar { display:grid; place-items:center; flex:none; width:32px; height:32px; border:1px solid color-mix(in srgb,var(--prism-accent-strong) 18%,transparent); border-radius:9px; background:color-mix(in srgb,var(--prism-accent-strong) 10%,var(--skin-surface)); color:var(--prism-accent-strong); }
+.toolbar-account .toolbar-account-copy { display:flex; flex-direction:column; align-items:flex-start; min-width:0; gap:2px; text-align:left; }
+.toolbar-account .toolbar-account-line { display:flex; align-items:center; gap:8px; max-width:100%; }
+.desktop-workspace .toolbar-account .toolbar-account-copy strong { display:block; max-width:112px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:13px; line-height:17px; font-weight:600; color:var(--prism-text); }
+.desktop-workspace .toolbar-account .toolbar-account-copy small { display:block; font-size:11px; line-height:14px; color:var(--skin-muted); white-space:nowrap; }
+.toolbar-account .toolbar-role { flex:none; padding:1px 5px; border-radius:5px; font-size:10px; line-height:14px; font-weight:500; color:var(--skin-muted); background:var(--skin-input); }
+.toolbar-account .toolbar-role[data-role=admin],.toolbar-account .toolbar-role[data-role=vip] { background:color-mix(in srgb,var(--prism-accent-strong) 12%,transparent); color:var(--prism-accent-strong); }
+.toolbar-account .toolbar-account-chevron { margin-left:5px; color:var(--skin-muted); flex:none; }
+.desktop-workspace .workspace-top-actions :is(button):focus-visible { outline:2px solid var(--prism-accent-strong); outline-offset:3px; }
+.desktop-workspace .workspace-top-actions :is(.toolbar-update,.toolbar-account,.appearance-trigger):active:not(:disabled) { transform:scale(.98); }
+@media (hover:hover) and (pointer:fine) {
+  .desktop-workspace .workspace-utility-group :is(.toolbar-update,.appearance-trigger):hover:not(:disabled),.desktop-workspace .workspace-utility-group #workspace-help-slot .assistant-trigger:hover { background:var(--hover-surface); color:var(--prism-text); }
+  .desktop-workspace .toolbar-account:hover { background:var(--hover-surface); border-color:color-mix(in srgb,var(--prism-accent-strong) 40%,var(--prism-line)); }
+}
+@media (max-width:1100px) {
+ .desktop-workspace .workspace-top-actions { gap:8px; }
+ .desktop-workspace .toolbar-connection { margin-right:0; font-size:11px; gap:5px; }
+ .desktop-workspace .workspace-utility-group :is(.toolbar-update,.appearance-trigger),.desktop-workspace .workspace-utility-group #workspace-help-slot .assistant-trigger { padding:0 8px; }
+ .desktop-workspace .toolbar-account .toolbar-account-copy strong { max-width:88px; }
+}
+@media (max-width:767px) {
+ .desktop-workspace .toolbar-connection { display:none; }
+ .desktop-workspace .workspace-top-actions { gap:6px; }
+ .desktop-workspace .toolbar-account { max-width:200px; }
+}

@@ -1,0 +1,11 @@
+// Development-only fake API. Never calls Electron, the game or a licensing server.
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import {JiuYinFpsUnlockCard} from '../src/components/JiuYinFpsUnlockCard';
+import {ConfirmationDialogHost} from '../src/components/ConfirmationDialog';
+import '../src/index.css';import '../src/workspace.css';import '../src/skins.css';import '../src/graphite.css';import '../src/readability.css';import '../src/interface-refinement.css';
+let vip=false, administrator=false, cap=300, visualRange=250;
+const snapshot=():JiuYinFpsUnlockState=>({supported:true,gameRoot:'D:/fixture-only',cap,visualRange,running:false,hasBackup:cap!==300||visualRange!==250,canApply:true,canRestore:cap!==300||visualRange!==250,backupPath:cap!==300||visualRange!==250?'示例备份路径（不是真实文件）':'',message:'隔离测试数据：不会修改游戏文件。'});
+window.synapsexDesktop={vip:{state:async()=>({vip,features:administrator?['jiuyin.fps']:[],signinLimit:vip?3:1}),require:async()=>{if(!administrator)throw Error('仅限管理员');return true;}},jiuyinFps:{state:async()=>snapshot(),apply:async(value)=>{if((value.cap>300||value.visualRange>250)&&!administrator)throw Error('仅限管理员');cap=Math.floor(value.cap/3)*3;visualRange=50+Math.floor((value.visualRange-50)/2)*2;return snapshot();},restore:async()=>{cap=300;visualRange=250;return snapshot();},importBackup:async()=>null}} as Window['synapsexDesktop'];
+function Fixture(){return <div className="desktop-workspace" style={{padding:24,maxWidth:1100,margin:'auto'}}><p style={{color:'var(--prism-text)'}}>隔离界面测试 · 所有数据为示例，不会修改游戏</p><div style={{display:'flex',gap:10,marginTop:10}}><button className="jiuyin-fps-button" onClick={()=>document.documentElement.dataset.skin='light'}>银白</button><button className="jiuyin-fps-button" onClick={()=>document.documentElement.dataset.skin='dark'}>深色</button><button className="jiuyin-fps-button" onClick={()=>{vip=!vip;window.dispatchEvent(new Event('synapsex:account-changed'));}}>切换会员 / 免费</button><button className="jiuyin-fps-button" onClick={()=>{administrator=!administrator;window.dispatchEvent(new Event('synapsex:account-changed'));}}>切换管理员</button></div><JiuYinFpsUnlockCard gameRoot="D:/fixture-only"/><ConfirmationDialogHost/></div>}
+createRoot(document.getElementById('root')!).render(<Fixture/>);

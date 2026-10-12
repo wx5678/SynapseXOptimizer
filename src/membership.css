@@ -1,0 +1,380 @@
+.membership-entry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  border: 1px solid var(--prism-line);
+  border-radius: 10px;
+  padding: 6px 12px;
+  background: var(--skin-input);
+  color: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.update-check-notice { position:fixed; top:96px; right:40px; z-index:100; display:flex; align-items:center; gap:12px; max-width:min(460px,calc(100vw - 64px)); padding:14px 18px; border:1px solid var(--prism-line); border-radius:12px; background:var(--skin-panel, #171e26); color:var(--skin-text, #eef2f7); box-shadow:0 8px 24px #0003; font-size:13px; }
+.update-check-notice button { display:flex; padding:5px; border-radius:6px; }
+.membership-entry:disabled { opacity:.6; cursor:wait; }
+.membership-entry strong,
+.membership-entry small {
+  display: block;
+  text-align: left;
+}
+.membership-entry small {
+  color: var(--skin-muted);
+  font-size: 12px;
+}
+.membership-dialog {
+  width: min(860px, calc(100vw - 32px));
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  background: var(--skin-panel, #171e26);
+  color: var(--skin-text, #eef2f7);
+  border: 1px solid var(--prism-line, #485462);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 24px 80px #0005;
+  margin: auto;
+}
+.membership-dialog::backdrop {
+  background: #070c15a8;
+}
+.membership-dialog header,
+.membership-dialog footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.membership-dialog header {
+  margin-bottom: 20px;
+}
+.membership-dialog h2 {
+  font-size: 23px;
+  font-weight: 650;
+}
+.membership-dialog h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.membership-dialog small {
+  opacity: 1;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--skin-muted);
+}
+.membership-dialog button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border: 1px solid var(--prism-line, #47576a);
+  border-radius: 9px;
+  background: var(--skin-input, #202d3c);
+  color: inherit;
+  cursor: pointer;
+}
+.membership-dialog button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.membership-dialog button:focus-visible,
+.membership-entry:focus-visible {
+  outline: 2px solid #50a4dc;
+  outline-offset: 3px;
+}
+.membership-dialog .license-settings {
+  margin: 0 0 20px;
+}
+.membership-offer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 216px;
+  gap: 24px;
+  border-top: 1px solid var(--prism-line, #47576a);
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.membership-offer img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+.membership-offer p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 14px 0;
+}
+.membership-prices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+.membership-prices strong {
+  font-size: 30px;
+  letter-spacing: -.025em;
+  color: var(--prism-text);
+}
+.membership-prices > span { flex: 1; min-width: 140px; padding: 16px 18px; border-radius: 14px; background: var(--skin-input); border: 1px solid var(--prism-line); font-size: 13px; color: var(--skin-muted); }
+.membership-prices small { display: block; margin-bottom: 6px; }
+.membership-contact { display: flex; gap: 12px; margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--prism-line); }
+.membership-contact > svg { flex: none; margin-top: 3px; color: var(--prism-accent-strong); }
+.membership-contact h4 { font-size: 15px; font-weight: 600; }
+.membership-contact p { margin: 7px 0 12px; color: var(--skin-soft); }
+.membership-contact small { display: block; margin-top: 10px; }
+.membership-wechat strong { font-size: 17px; letter-spacing: .02em; margin-right: 10px; }
+.membership-wechat span { font-size: 12px; }
+.membership-qr { align-self: start; margin: 4px 0 0; padding: 10px; border-radius: 16px; background: #fff; border: 1px solid #dce1e8; }
+.membership-qr figcaption { color: #495566; font-size: 13px; text-align: center; margin-top: 8px; }
+.membership-dialog footer {
+  font-size: 12px;
+}
+.membership-error {
+  margin-top: 12px;
+  color: inherit;
+}
+.update-notes {
+  white-space: pre-wrap;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+.update-progress {
+  height: 7px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #8090a333;
+  margin: 20px 0 12px;
+}
+.update-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #389fce;
+  transform-origin: left;
+  transition: transform 160ms linear;
+}
+.update-dialog footer {
+  margin: 22px 0 14px;
+}
+.update-dialog p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+/* Fixed rail; expansion overlays the page without moving its content. */
+.workspace-sidebar-frame { display: contents; }
+.sidebar-drawer-surface { display: none; }
+.membership-dialog {
+  background: var(--skin-surface, #171e26);
+  color: var(--prism-text, #eef2f7);
+}
+.global-signin-dock .global-signin-reminder > svg {
+  flex-shrink: 0;
+}
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  html .desktop-workspace .workspace-sidebar-frame {
+    display: block;
+    position: fixed;
+    top: 24px;
+    bottom: 24px;
+    left: 28px;
+    width: 76px;
+    z-index: 110;
+    isolation: isolate;
+    /* No filter on this ancestor: its moving clip otherwise invalidates the
+       shadow surface, and filter also changes fixed descendants' coordinates. */
+  }
+  /* Only the background stretches/moves. Text and hit targets stay at their
+     final size; neither a whole-menu clip nor layout is animated per frame. */
+  html .desktop-workspace .sidebar-drawer-surface {
+    display: block;
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 76px;
+    border-radius: 30px;
+    background: var(--sidebar-surface);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .sidebar-drawer-surface::before, .sidebar-drawer-surface::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: var(--sidebar-surface);
+    transition: none;
+  }
+  .sidebar-drawer-surface::before {
+    left: 38px;
+    width: 156px;
+    transform-origin: left center;
+    transform: scaleX(.001);
+  }
+  .sidebar-drawer-surface::after {
+    left: 0;
+    width: 76px;
+    border-radius: 30px;
+    transform: translateX(0);
+  }
+  .workspace-sidebar-frame:is(:hover, :has(:focus-visible)) .sidebar-drawer-surface::before { transform: scaleX(1); }
+  .workspace-sidebar-frame:is(:hover, :has(:focus-visible)) .sidebar-drawer-surface::after { transform: translateX(156px); }
+  html .desktop-workspace .workspace-sidebar {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 232px !important;
+    clip-path: inset(0 156px 0 0 round 30px);
+    /* A static hit-test clip, switched once; never animate the menu bitmap. */
+    transition: none;
+    contain: layout paint;
+    background: transparent;
+    backdrop-filter: none;
+    filter: none;
+    z-index: 1;
+    border: 0;
+    border-radius: 30px;
+    box-shadow: none;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  html .desktop-workspace .workspace-main {
+    margin-left: 116px !important;
+  }
+  html .desktop-workspace .prism-titlebar {
+    left: 116px;
+  }
+  html .desktop-workspace .workspace-sidebar-frame:is(:hover, :has(:focus-visible)) .workspace-sidebar {
+    clip-path: inset(0 round 30px);
+  }
+  /* One 48px icon lane: every glyph is centered 38px from the rail edge. */
+  html .desktop-workspace .workspace-sidebar :is(.workspace-nav-item, .more-tools-toggle, .sidebar-backup) {
+    padding-left: 14px;
+    border-left-width: 0;
+    border-right-width: 0;
+  }
+  html .desktop-workspace .workspace-sidebar :is(.workspace-nav-item, .more-tools-toggle, .sidebar-backup) > svg:first-child {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+  }
+  html .desktop-workspace .workspace-sidebar .workspace-brand {
+    padding-left: 7px;
+  }
+  html .desktop-workspace .workspace-sidebar .workspace-nav-item.prism-nav-active::before {
+    left: 2px;
+    width: 44px;
+  }
+  .workspace-sidebar .workspace-nav-item,
+  .workspace-sidebar .more-tools-toggle {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    white-space: nowrap;
+  }
+  .workspace-sidebar .workspace-nav-item > svg,
+  .workspace-sidebar .more-tools-toggle > svg {
+    flex-shrink: 0;
+  }
+  .workspace-sidebar .workspace-brand > span:first-child {
+    flex-shrink: 0;
+  }
+  .workspace-sidebar .workspace-brand > span:last-child,
+  .workspace-sidebar .workspace-nav-item > span:not(.nav-selection-dot),
+  .workspace-sidebar .more-tools-toggle > span,
+  .workspace-sidebar .sidebar-backup > span,
+  .workspace-sidebar .sidebar-version,
+  .workspace-sidebar .nav-group > h2 {
+    opacity: 0;
+    transition: none;
+  }
+  .workspace-sidebar-frame:is(:hover, :has(:focus-visible)) .workspace-sidebar
+    :is(
+      .workspace-brand > span:last-child,
+      .workspace-nav-item > span,
+      .more-tools-toggle > span,
+      .sidebar-backup > span,
+      .sidebar-version,
+      .nav-group > h2
+    ) {
+    opacity: 1;
+  }
+  .workspace-sidebar-frame:has(:focus-visible) .workspace-sidebar,
+  .workspace-sidebar-frame:has(:focus-visible) .workspace-sidebar * {
+    transition: none !important;
+  }
+  /* Pausing decorative game-time effects must not disable this user-triggered
+     drawer. Explicit motion-off and keyboard navigation still stay instant. */
+  @media (prefers-reduced-motion: no-preference) {
+    html .desktop-workspace .workspace-sidebar-frame[data-drawer-motion="on"]:not(:has(:focus-visible)) .sidebar-drawer-surface::before,
+    html .desktop-workspace .workspace-sidebar-frame[data-drawer-motion="on"]:not(:has(:focus-visible)) .sidebar-drawer-surface::after {
+      will-change: transform;
+      transition: transform 300ms var(--ease-in-out) !important;
+    }
+    html .desktop-workspace .workspace-sidebar-frame:not(:has(:focus-visible)) .workspace-sidebar[data-drawer-motion="on"]
+      :is(.workspace-brand > span:last-child, .workspace-nav-item > span:not(.nav-selection-dot), .more-tools-toggle > span, .sidebar-backup > span, .sidebar-version, .nav-group > h2) {
+      transition: opacity 160ms ease !important;
+    }
+  }
+  html .global-signin-dock {
+    left: 44px;
+    bottom: 116px;
+    width: 204px;
+    height: 44px;
+    clip-path: inset(0 160px 0 0 round 12px);
+    overflow: visible;
+    transition: none;
+    z-index: 115;
+  }
+  html .workspace-sidebar-frame:is(:hover, :has(:focus-visible)) .global-signin-dock {
+    clip-path: inset(0 round 12px);
+  }
+  html .global-signin-dock .global-signin-reminder {
+    width: 100%;
+    min-height: 44px;
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: none;
+  }
+  html .global-signin-dock .global-signin-reminder > svg:first-child {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    padding: 11px;
+    box-sizing: border-box;
+    border: 1px solid var(--prism-line);
+    border-radius: 12px;
+    background: var(--skin-surface);
+  }
+  html .global-signin-dock .global-signin-reminder > span,
+  html .global-signin-dock .global-signin-reminder > svg:last-child { opacity: 0; }
+  html .workspace-sidebar-frame:is(:hover, :has(:focus-visible)) .global-signin-reminder > span,
+  html .workspace-sidebar-frame:is(:hover, :has(:focus-visible)) .global-signin-reminder > svg:last-child { opacity: 1; }
+  html .global-signin-dock .global-signin-reminder strong { white-space: nowrap; font-size: 12px; }
+  html .global-signin-dock .global-signin-reminder small { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 10px; margin-top: 2px; }
+  @media (prefers-reduced-motion: no-preference) {
+    html .workspace-sidebar-frame[data-drawer-motion="on"]:not(:has(:focus-visible)) .global-signin-reminder > span { transition: opacity 160ms ease !important; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html .workspace-sidebar,
+  html .workspace-sidebar *,
+  html .sidebar-drawer-surface::before,
+  html .sidebar-drawer-surface::after,
+  html .global-signin-reminder > span,
+  html .update-progress span {
+    transition: none !important;
+  }
+}
+@media (max-width: 600px) {
+  .membership-offer {
+    grid-template-columns: 1fr;
+  }
+  .membership-offer img {
+    justify-self: center;
+  }
+  .membership-dialog {
+    padding: 18px;
+  }
+  .membership-entry {
+    padding: 6px 8px;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "read": [
+    "/api/lab/state", "/api/lab/sample",
+    "/api/lab/session/state", "/api/lab/session/targets", "/api/lab/session/topology", "/api/lab/session/support",
+    "/api/lab/session/library-scan", "/api/lab/session/registry", "/api/lab/session/irq", "/api/lab/session/launch-preview",
+    "/api/lab/session/gpu-catalog", "/api/lab/session/gpu-records",
+    "/api/lab/session/latency", "/api/lab/session/latency-history", "/api/lab/session/diagnostics",
+    "/api/system/expert/catalog", "/api/network/nic/audit"
+  ],
+  "diagnostics": ["/api/lab/session/latency-start", "/api/lab/session/diagnostic-start"],
+  "preferences": ["/api/lab/session/notice", "/api/lab/session/preferences"],
+  "recovery": [
+    "/api/lab/restore", "/api/lab/session/stop", "/api/lab/session/latency-stop", "/api/lab/session/diagnostic-stop",
+    "/api/lab/session/gpu-restore", "/api/lab/session/registry-restore",
+    "/api/system/expert/restore", "/api/network/tcp/restore", "/api/network/nic/restore", "/api/network/qos/remove"
+  ],
+  "paid": {
+    "/api/lab/start": "lab.all",
+    "/api/lab/session/start": "lab.all",
+    "/api/lab/session/trim": "lab.all",
+    "/api/lab/session/registry-apply": "lab.all",
+    "/api/lab/session/gpu-apply": "lab.all",
+    "/api/system/expert/apply": "system.expert",
+    "/api/network/tcp/apply": "network.tcp",
+    "/api/network/qos/apply": "network.tcp",
+    "/api/network/nic/apply": "network.nic",
+    "/api/network/nic/property": "network.nic"
+  },
+  "protectedPrefixes": {
+    "/api/lab/": "lab.all",
+    "/api/system/expert/": "system.expert",
+    "/api/network/tcp/": "network.tcp",
+    "/api/network/qos/": "network.tcp",
+    "/api/network/nic/": "network.nic"
+  }
+}

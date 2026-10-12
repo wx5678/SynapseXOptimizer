@@ -1,0 +1,196 @@
+.jiuyin-resource-inputs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.jiuyin-resource-inputs .jiuyin-fps-custom { min-width: 0; }
+.jiuyin-resource-inputs input[type="number"] { width: 100%; min-height: 42px; margin-top: 8px; padding: 8px 12px; border: 1px solid var(--prism-line); border-radius: 10px; background: var(--skin-input); color: var(--prism-text); }
+.jiuyin-resource-inputs input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (max-width: 800px) { .jiuyin-resource-inputs { grid-template-columns: 1fr; } }
+.jiuyin-fps-card {
+  margin-top: 20px;
+  padding: 24px;
+  border: 1px solid var(--prism-line);
+  border-radius: 20px;
+  background: var(--skin-input);
+  color: var(--prism-text);
+}
+.jiuyin-fps-custom {
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid var(--prism-line);
+  border-radius: 12px;
+}
+.jiuyin-fps-custom > label:first-child {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.jiuyin-fps-custom > input {
+  width: 160px;
+  max-width: 100%;
+  border: 1px solid var(--prism-line);
+  border-radius: 9px;
+  padding: 10px 12px;
+  background: var(--skin-input);
+  color: var(--prism-text);
+  font-size: 18px;
+}
+.jiuyin-fps-custom input:focus-visible {
+  outline: 2px solid var(--prism-accent-strong);
+  outline-offset: 2px;
+}
+.jiuyin-fps-custom .jiuyin-fps-actions {
+  margin-top: 10px;
+}
+.jiuyin-fps-custom [aria-pressed="true"] {
+  border-color: var(--prism-accent-strong);
+}
+.jiuyin-fps-risk {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--status-warning);
+}
+.jiuyin-fps-risk input {
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.jiuyin-fps-card header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.jiuyin-fps-card header > div {
+  flex: 1;
+  min-width: 220px;
+}
+.jiuyin-fps-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 650;
+  margin: 0;
+}
+.jiuyin-fps-card p {
+  font-size: 13px;
+  line-height: 1.75;
+  margin: 5px 0 0;
+}
+.jiuyin-fps-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--prism-line);
+  border-radius: 13px;
+}
+.jiuyin-fps-vip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border: 1px solid currentColor;
+  border-radius: 20px;
+}
+.jiuyin-fps-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.jiuyin-fps-card .jiuyin-fps-check-notice {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-left: 2px solid var(--prism-accent-strong);
+  border-radius: 0 8px 8px 0;
+  background: var(--skin-surface);
+  color: var(--skin-soft);
+  overflow-wrap: anywhere;
+}
+.jiuyin-fps-summary > div {
+  border: 1px solid var(--prism-line);
+  border-radius: 12px;
+  padding: 14px;
+}
+.jiuyin-fps-summary span {
+  display: block;
+  font-size: 12px;
+}
+.jiuyin-fps-summary strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+.jiuyin-fps-status {
+  padding: 12px 14px;
+  border: 1px solid var(--prism-line);
+  border-radius: 12px;
+}
+.jiuyin-fps-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.jiuyin-fps-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  border: 1px solid var(--prism-line);
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  padding: 9px 14px;
+  font-size: 13px;
+}
+.jiuyin-fps-button.is-primary {
+  background: var(--accent, #315dad);
+  color: #fff;
+  border-color: transparent;
+}
+.jiuyin-fps-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.jiuyin-fps-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.jiuyin-fps-notes {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+.jiuyin-fps-notes > svg {
+  flex: none;
+  margin-top: 7px;
+}
+.jiuyin-fps-card .jiuyin-fps-path {
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  margin-top: 12px;
+}
+.jiuyin-fps-error {
+  padding: 12px;
+  border: 1px solid currentColor;
+  border-radius: 10px;
+  color: var(--skin-danger, #b83c40);
+}
+@media (max-width: 640px) {
+  .jiuyin-fps-card {
+    padding: 18px;
+  }
+  .jiuyin-fps-summary {
+    grid-template-columns: 1fr;
+  }
+  .jiuyin-fps-actions > .jiuyin-fps-button {
+    width: 100%;
+  }
+}

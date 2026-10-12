@@ -1,0 +1,15 @@
+.window-light-effect {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  position:fixed; inset:0; margin:0; padding:0; width:100%; height:100%;
+  border:0; overflow:hidden; background:transparent; pointer-events:none;
+}
+.window-light-effect:not(:popover-open) { display:none; }
+.window-light-effect::backdrop { background:transparent; pointer-events:none; }
+.window-light-effect > div { position:absolute; pointer-events:none; opacity:0; }
+.window-light-veil { inset:0; background:#080c13; }
+.window-light-effect[data-phase="enter"] .window-light-veil { background:var(--prism-canvas,#111315); }
+.window-light-bloom { left:50%; top:-30%; width:120%; height:120%; transform:translateX(-50%); background:radial-gradient(ellipse at 50% 20%,rgba(155,199,255,.42),rgba(69,122,204,.12) 36%,transparent 67%); }
+.window-light-line { left:50%; top:1px; width:64%; height:2px; transform:translateX(-50%); border-radius:50%; background:linear-gradient(90deg,transparent,#a9cbff 28%,#e1efff 50%,#a9cbff 72%,transparent); box-shadow:0 0 20px 4px #89b5ff60; }
+.window-light-rim { inset:0; border-radius:10px; border:1px solid #91baff60; box-shadow:inset 0 0 36px #7baaff20; }
+.window-light-effect[data-reduced="true"] :is(.window-light-bloom,.window-light-line,.window-light-rim) { display:none; }
+@media(prefers-reduced-motion:reduce) { .window-light-effect :is(.window-light-bloom,.window-light-line,.window-light-rim) { display:none; } }

@@ -1,0 +1,66 @@
+/* Shared semantic colors. Keep the independent in-game OSD unchanged. */
+html[data-skin]:not([data-overlay="1"]) {
+  --status-success: #83d9b8;
+  --status-warning: #e7bd74;
+  --status-danger: #ff9ba8;
+  --status-info: #8dcafa;
+  --status-violet: #c4afff;
+  --control-outline: #737e90;
+}
+html[data-skin="light"]:not([data-overlay="1"]) {
+  --skin-muted: #566171;
+  --prism-muted: #566171;
+  --status-success: #176c50;
+  --status-warning: #805000;
+  --status-danger: #aa243b;
+  --status-info: #245b91;
+  --status-violet: #664099;
+  --control-outline: #7c8798;
+}
+.desktop-workspace { --prism-muted: var(--skin-muted); }
+.desktop-workspace .sidebar-backup svg:first-child { color: var(--status-success); }
+.desktop-workspace .assistant-drawer { color: var(--prism-text); box-shadow: 0 20px 60px -20px #101d3540; }
+.desktop-workspace .assistant-status { color: var(--prism-accent-strong); background: var(--skin-input); border-color: var(--prism-line); }
+.desktop-workspace .assistant-status small { color: var(--skin-muted); font-size: 11px; }
+.desktop-workspace .assistant-status b { color: var(--prism-text); font-size: 12px; }
+.desktop-workspace .assistant-nav { color: var(--skin-soft); background: var(--skin-input); border-color: var(--prism-line); }
+.desktop-workspace .assistant-nav svg { color: var(--prism-accent-strong); flex-shrink: 0; }
+.desktop-workspace .assistant-nav:hover { color: var(--prism-text); background: var(--hover-surface); border-color: var(--prism-accent-strong); }
+.desktop-workspace .assistant-orb { color: var(--prism-accent-strong); background: var(--hover-surface); border-color: var(--prism-line); box-shadow: none; }
+.desktop-workspace .assistant-drawer footer { font-size: 11px; }
+.desktop-workspace .confirm-close { color: var(--skin-soft); background: var(--skin-input); border-color: var(--prism-line); }
+.desktop-workspace .confirm-close:hover { color: var(--prism-text); background: var(--hover-surface); }
+.desktop-workspace .confirm-danger .confirm-icon { color: var(--status-danger); }
+.desktop-workspace .system-restart-note { color: var(--status-warning); }
+.desktop-workspace .visual-select { color: var(--prism-text); background: var(--skin-input); border-color: var(--control-outline); }
+
+/* Legacy utility classes: cover every neutral/status shade, including icons.
+   Do not use blanket SVG fill/stroke overrides: Lucide relies on fill="none". */
+html[data-skin="light"] .desktop-workspace :is(.text-slate-50,.text-slate-100,.text-slate-200) { color: var(--prism-text); }
+.desktop-workspace :is(.text-slate-600,.text-slate-700) { color: var(--skin-muted); }
+html[data-skin="light"] .desktop-workspace :is([class*="text-violet-"],[class*="text-purple-"],[class*="text-indigo-"]) { color: var(--status-violet); }
+html[data-skin="light"] .desktop-workspace :is([class*="text-rose-"],[class*="text-pink-"],[class*="text-red-"]) { color: var(--status-danger); }
+html[data-skin="light"] .desktop-workspace :is([class*="text-emerald-"],[class*="text-green-"],[class*="text-teal-"]) { color: var(--status-success); }
+html[data-skin="light"] .desktop-workspace :is([class*="text-sky-"],[class*="text-cyan-"],[class*="text-blue-"]) { color: var(--status-info); }
+html[data-skin="light"] .desktop-workspace :is([class*="text-amber-"],[class*="text-yellow-"]) { color: var(--status-warning); }
+html[data-skin="light"] .desktop-workspace :is(.prism-button-primary,.workbench-primary) :is(span,svg,b,strong) { color: var(--action-ink); }
+html[data-skin="light"] .desktop-workspace .confirm-danger-button { color: #fff; background: #aa243b; border-color: #aa243b; box-shadow: none; }
+html[data-skin="light"] .desktop-workspace :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea) { border-color: var(--control-outline); }
+html[data-skin="light"] .desktop-workspace :is(button,input,select,textarea):disabled { opacity: 1; color: #667181; background: #e8ecf1; border-color: #c5ced9; box-shadow: none; }
+html[data-skin="light"] .desktop-workspace :is(button,input,select,textarea):disabled * { color: inherit; }
+
+.desktop-workspace .report-chart-surface,
+.desktop-workspace .report-metric-surface,
+.desktop-workspace .report-score-surface,
+.desktop-workspace .report-toast,
+.desktop-workspace .config-table-heading { background: var(--skin-surface); color: var(--prism-text); }
+.desktop-workspace .report-score-surface { box-shadow: none; }
+.desktop-workspace .report-toast { border-color: var(--status-success); }
+.desktop-workspace .report-chart-fps { stroke: var(--status-success); }
+.desktop-workspace .report-chart-low { stroke: var(--status-violet); }
+.desktop-workspace .report-chart-grid { stroke: var(--prism-line); }
+.desktop-workspace .report-legend-fps { background: var(--status-success); }
+.desktop-workspace .report-legend-low { background: var(--status-violet); }
+.desktop-workspace .monitor-fps-chart .monitor-chart-line { stroke: var(--prism-accent-strong); }
+.desktop-workspace .monitor-fps-chart .monitor-chart-grid { stroke: var(--prism-line); }
+html[data-skin="light"] .desktop-workspace ::selection { background: #315eaa; color: #fff; }

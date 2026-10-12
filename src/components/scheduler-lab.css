@@ -1,0 +1,42 @@
+.scheduler-lab { color:var(--prism-text); }
+.lab-heading { display:flex; gap:16px; align-items:flex-start; margin:16px 0 28px; }
+.lab-heading > svg { color:var(--prism-accent-strong); margin-top:8px; }
+.lab-heading h1 { font-size:34px; font-weight:650; margin:8px 0; }
+.scheduler-lab p { color:var(--skin-muted); font-size:13px; line-height:1.9; margin:8px 0; }
+.lab-card { padding:24px; border:1px solid var(--prism-line); border-radius:14px; background:var(--skin-surface); margin-bottom:18px; }
+.lab-card h2 { font-size:17px; font-weight:600; }
+.lab-controls { display:flex; align-items:flex-end; gap:12px; margin:20px 0; flex-wrap:wrap; }
+.lab-controls label { flex:1; min-width:190px; font-size:12px; color:var(--skin-soft); }
+.lab-controls select { display:block; width:100%; padding:12px; margin-top:8px; border-radius:10px; border:1px solid var(--prism-line); background:var(--skin-input); color:var(--prism-text); }
+.lab-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.lab-table { max-height:380px; overflow:auto; border:1px solid var(--prism-line); border-radius:10px; }
+.lab-table table { width:100%; font-size:13px; text-align:left; border-collapse:collapse; }
+.lab-table th { position:sticky; top:0; background:var(--skin-input); }
+.lab-table th,.lab-table td { padding:12px; border-bottom:1px solid var(--prism-line); }
+.lab-notice { padding:14px 18px; border:1px solid var(--prism-line); border-radius:10px; background:var(--skin-input); }
+.scheduler-lab .lab-error { color:var(--prism-text); border-left:3px solid #d78b38; padding-left:12px; overflow-wrap:anywhere; }
+.scheduler-lab button:disabled { opacity:.45; cursor:not-allowed; }
+.scheduler-lab input { accent-color:var(--prism-accent-strong); }
+.lab-tabs { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 16px; position:sticky; top:0; z-index:5; padding:10px; background:var(--skin-surface); border:1px solid var(--prism-line); border-radius:12px; }
+.lab-tabs button,.lab-expansion button:not(.workbench-primary):not(.workbench-secondary) { padding:10px 14px; border:1px solid var(--prism-line); border-radius:8px; background:var(--skin-input); color:var(--prism-text); font-size:12px; }
+.lab-tabs button[aria-pressed=true] { border-color:var(--prism-accent-strong); color:var(--prism-accent-strong); }
+.lab-controls input:not([type=checkbox]) { display:block; width:100%; margin-top:8px; padding:12px; background:var(--skin-input); color:var(--prism-text); border:1px solid var(--prism-line); border-radius:10px; }
+.lab-checks { display:flex; flex-wrap:wrap; gap:20px; font-size:13px; margin:20px 0; }
+.lab-checks label { display:flex; gap:8px; align-items:center; }
+.lab-target-list { max-height:300px; overflow:auto; border:1px solid var(--prism-line); border-radius:10px; }
+.lab-target-list label { padding:12px 16px; display:flex; gap:12px; align-items:center; border-bottom:1px solid var(--prism-line); font-size:13px; }
+.lab-expansion small { display:block; color:var(--skin-muted); font-size:11px; margin-top:5px; overflow-wrap:anywhere; }
+.lab-cpu-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(175px,1fr)); gap:8px; margin-top:16px; max-height:400px; overflow:auto; }
+.lab-cpu-grid label { display:flex; gap:8px; padding:12px; border:1px solid var(--prism-line); border-radius:8px; font-size:12px; }
+.lab-library-row { display:flex; align-items:center; gap:10px; margin:8px 0; padding:12px; border-bottom:1px solid var(--prism-line); font-size:13px; }
+.lab-library-row span { flex:1; min-width:0; overflow-wrap:anywhere; }
+.lab-library-row select { min-width:0; max-width:38%; padding:10px; background:var(--skin-input); color:var(--prism-text); border:1px solid var(--prism-line); border-radius:8px; }
+.lab-status-heading { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.lab-path { overflow-wrap:anywhere; }
+.lab-raw-report { max-height:420px; overflow:auto; background:var(--skin-input); color:var(--prism-text); padding:16px; font:12px/1.8 Consolas,monospace; border:1px solid var(--prism-line); border-radius:10px; margin-top:12px; }
+.scheduler-lab h3 { margin-top:24px; font-size:14px; }
+.scheduler-lab a { color:var(--prism-accent-strong); text-decoration:underline; }
+.scheduler-lab details { padding:18px 0; border-bottom:1px solid var(--prism-line); }
+.scheduler-lab summary { cursor:pointer; font-size:14px; font-weight:600; }
+.lab-expansion .lab-tabs { position:static; }
+.lab-primary-nav { top:96px; z-index:50; }

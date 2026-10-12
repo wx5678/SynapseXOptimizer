@@ -1,0 +1,11 @@
+[Unit]
+Description=Renew SynapseX HTTPS certificate
+After=network-online.target nginx.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/synapsex-certbot/bin/certbot renew --quiet --deploy-hook /usr/local/sbin/synapsex-cert-reload
+TimeoutStartSec=600
+PrivateTmp=true
+UMask=0077

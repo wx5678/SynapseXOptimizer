@@ -1,0 +1,39 @@
+[Unit]
+Description=SynapseX internal licensing pilot
+After=network.target
+
+[Service]
+Type=simple
+User=synapsex-license
+Group=synapsex-license
+WorkingDirectory=/opt/synapsex-license/current
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=SYNAPSEX_DATA_DIR=/var/lib/synapsex-license
+Environment=SYNAPSEX_KEY_PATH=/etc/synapsex-license/signing.pem
+EnvironmentFile=-/etc/synapsex-license/service.env
+ExecStart=/usr/bin/gunicorn --bind 127.0.0.1:8787 --workers 2 --threads 2 --timeout 30 --no-control-socket --error-logfile - app:create_app()
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/synapsex-license
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+CapabilityBoundingSet=
+MemoryMax=384M
+TasksMax=64
+LimitNOFILE=4096
+StandardOutput=journal
+StandardError=journal
+LogRateLimitIntervalSec=30s
+LogRateLimitBurst=100
+
+[Install]
+WantedBy=multi-user.target
